@@ -1,0 +1,28 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+ 
+<suite name="smoke-test-suite" parallel="tests" thread-count="2" preserve-order="false">
+<!-- <parameter name="ReportLocation" value="."></parameter>
+<parameter name="remoteURL" value="localhost"></parameter>
+<parameter name="remotePort" value="4444"></parameter>
+<parameter name="baseURL" value="http://www.kagrana.com/"></parameter>
+<parameter name="OS" value="WINDOWS"></parameter>
+<parameter name="browser" value="FIREFOX"></parameter>
+<parameter name="version" value="23.0"></parameter>
+<parameter name="internal" value="true"></parameter> -->
+<test name="PassTest" parallel="tests" thread-count="2" >
+<parameter name="browser" value="Firefox"/>
+    <classes>
+       <class name="com.booj.base.PassTest" >
+       </class>
+    </classes>
+</test>
+<!-- -->
+<test name="FailTest" parallel="tests" thread-count="2" >
+<parameter name="browser" value="Firefox"/>
+    <classes>
+       <class name="com.booj.base.FailTest" >
+       </class>
+    </classes>
+</test>
+<!-- -->
+</suite>

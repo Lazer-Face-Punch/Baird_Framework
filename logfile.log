@@ -1,0 +1,10 @@
+2015-02-25 14:14:29,583 INFO  [AccountLoginTest] Click account menu item 
+2015-02-25 14:14:29,983 INFO  [AccountLoginTest] Fill user name 
+2015-02-25 14:14:30,265 INFO  [AccountLoginTest] Fill password 
+2015-02-25 14:14:30,476 INFO  [AccountLoginTest] Click login button 
+2015-02-25 14:14:34,041 INFO  [AccountLoginTest] Verify welcome text 
+2015-02-25 14:14:34,896 INFO  [AccountLoginTest] Click account menu item 
+2015-02-25 14:14:35,373 INFO  [AccountLoginTest] Fill user name 
+2015-02-25 14:14:35,618 INFO  [AccountLoginTest] Fill password 
+2015-02-25 14:14:35,800 INFO  [AccountLoginTest] Click login button 
+2015-02-25 14:14:39,600 INFO  [AccountLoginTest] Verify welcome text 

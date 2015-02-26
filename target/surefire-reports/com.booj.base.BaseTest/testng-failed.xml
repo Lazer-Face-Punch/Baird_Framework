@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite verbose="0" name="Failed suite [com.booj.base.BaseTest]">
+  <test name="Command line test(failed)">
+    <classes>
+      <class name="com.booj.base.BaseTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="test_Account_Login_Page_Appear_Correct"/>
+          <include name="setUpBeforeTestClass"/>
+        </methods>
+      </class> <!-- com.booj.base.BaseTest -->
+    </classes>
+  </test> <!-- Command line test(failed) -->
+</suite> <!-- Failed suite [com.booj.base.BaseTest] -->
