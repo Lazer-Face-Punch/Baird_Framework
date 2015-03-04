@@ -8,25 +8,25 @@ import org.apache.commons.logging.LogFactory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
-import org.testng.ITestResult;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
-
-import com.booj.PageObject.AccountLoginTest;
 
 public abstract class BaseTestSuper {
 	protected WebDriver driver;
-	protected AccountLoginTest objLogin;
+	/*protected AccountLoginTest objLogin;*/
 
 	/* protected String baseUrl = "http://www.bairdwarner.com"; */
 
 	
-	@Parameters({"browser"})
+	/*@Parameters({"browser"})*/
 	@BeforeMethod
+	/*public void setUpBeforeTestClass()throws Exception{*/
+		
+/*	Driver.Initialize();
+}*/
 	public void setUpBeforeTestClass(@Optional String browser, Method method) {
 		System.out.println("Running Test: " + method.getName());
+		
 	if (browser.equalsIgnoreCase("Firefox")){
 		driver = new FirefoxDriver();
 	}
@@ -42,6 +42,14 @@ public abstract class BaseTestSuper {
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.get("http://www.bairdwarner.com");
 	}
+	
+/*	@AfterMethod
+	public void tearDown(ITestResult result) throws Exception {
+		System.out.println("method name:" + result.getMethod().getMethodName());
+		System.out.println("\nBrower close");
+		driver.quit();
+	}*/
+}
 
 	/*
 	 * @BeforeTest public void setUp() throws Exception{ driver = new
@@ -71,10 +79,4 @@ public abstract class BaseTestSuper {
 	 * URL("http://localhost:4444/wd/hub"),caps); }
 	 */
 
-	@AfterMethod
-	public void tearDown(ITestResult result) throws Exception {
-		System.out.println("method name:" + result.getMethod().getMethodName());
-		System.out.println("\nBrower close");
-		driver.quit();
-	}
-}
+	

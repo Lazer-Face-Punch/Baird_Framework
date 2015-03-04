@@ -1,10 +1,9 @@
-2015-02-25 14:14:29,583 INFO  [AccountLoginTest] Click account menu item 
-2015-02-25 14:14:29,983 INFO  [AccountLoginTest] Fill user name 
-2015-02-25 14:14:30,265 INFO  [AccountLoginTest] Fill password 
-2015-02-25 14:14:30,476 INFO  [AccountLoginTest] Click login button 
-2015-02-25 14:14:34,041 INFO  [AccountLoginTest] Verify welcome text 
-2015-02-25 14:14:34,896 INFO  [AccountLoginTest] Click account menu item 
-2015-02-25 14:14:35,373 INFO  [AccountLoginTest] Fill user name 
-2015-02-25 14:14:35,618 INFO  [AccountLoginTest] Fill password 
-2015-02-25 14:14:35,800 INFO  [AccountLoginTest] Click login button 
-2015-02-25 14:14:39,600 INFO  [AccountLoginTest] Verify welcome text 
+
+
+2015-03-03 17:20:25,747 INFO  [BaseSuperStatic] New Driver Instantiated 
+2015-03-03 17:20:29,170 INFO  [AccountLoginStatic] Click account menu item 
+2015-03-03 17:20:29,740 INFO  [AccountLoginStatic] Fill user name 
+2015-03-03 17:20:29,874 INFO  [AccountLoginStatic] Fill password 
+2015-03-03 17:20:30,020 INFO  [AccountLoginStatic] Click login button 
+2015-03-03 17:20:34,097 INFO  [AccountLoginStatic] Verify Welcome Text 
+2015-03-03 17:20:34,834 INFO  [BaseSuperStatic] Driver Closed 

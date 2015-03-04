@@ -7,7 +7,7 @@ import com.booj.PageObject.AccountLoginTest;
 
 public class FailTest extends BaseTestSuper {
 	/* WebDriver driver; */
-	/* AccountLoginTest objLogin; */
+	AccountLoginTest objLogin; 
 	/* BaseTestSub objSetup; */
 	/*test*/
 

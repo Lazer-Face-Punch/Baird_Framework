@@ -4,10 +4,10 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.booj.PageObject.AccountLoginTest;
-
+/*@Listeners (RealTimeReport.class)*/
 public class PassTest extends BaseTestSuper {
 	/* WebDriver driver; */
-	/* AccountLoginTest objLogin; */
+	 AccountLoginTest objLogin; 
 	/* BaseTestSub objSetup; */
 	/*test*/
 
@@ -24,8 +24,8 @@ public class PassTest extends BaseTestSuper {
 		
 		Assert.assertTrue(loginWelcomeTitle.equals("Welcome, brenden thornsberry"));
 		
-		
 	
 	}
+
 
 }
