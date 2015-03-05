@@ -5,9 +5,10 @@
     <classes>
       <class name="com.booj.base.StaticTest">
         <methods>
+          <include name="tearDown"/>
           <include name="setupBeforeTestMethod"/>
           <include name="tearDownAfterTestMethod"/>
-          <include name="test_Account_Login_Page_Appear_Correct_Pass"/>
+          <include name="test_Account_Login_Page_Appear_Correct_Fail"/>
         </methods>
       </class> <!-- com.booj.base.StaticTest -->
     </classes>

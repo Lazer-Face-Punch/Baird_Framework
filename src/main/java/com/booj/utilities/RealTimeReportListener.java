@@ -4,7 +4,7 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-public class RealTimeReport implements ITestListener {
+public class RealTimeReportListener implements ITestListener {
 	
 	@Override
 	 

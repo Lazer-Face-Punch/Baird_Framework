@@ -1,24 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="0" failed="1" total="2" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="13022" started-at="2015-03-04T00:20:21Z" finished-at="2015-03-04T00:20:34Z">
+  <suite name="Default suite" duration-ms="24144" started-at="2015-03-05T23:14:56Z" finished-at="2015-03-05T23:15:20Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="13022" started-at="2015-03-04T00:20:21Z" finished-at="2015-03-04T00:20:34Z">
+    <test name="Default test" duration-ms="24144" started-at="2015-03-05T23:14:56Z" finished-at="2015-03-05T23:15:20Z">
       <class name="com.booj.base.StaticTest">
-        <test-method status="PASS" signature="setupBeforeTestMethod()[pri:0, instance:com.booj.base.StaticTest@4411d970]" name="setupBeforeTestMethod" is-config="true" duration-ms="3922" started-at="2015-03-03T17:20:21Z" finished-at="2015-03-03T17:20:25Z">
+        <test-method status="PASS" signature="setupBeforeTestMethod()[pri:0, instance:com.booj.base.StaticTest@5d624da6]" name="setupBeforeTestMethod" is-config="true" duration-ms="3738" started-at="2015-03-05T16:14:56Z" finished-at="2015-03-05T16:15:00Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupBeforeTestMethod -->
-        <test-method status="PASS" signature="test_Account_Login_Page_Appear_Correct_Pass()[pri:0, instance:com.booj.base.StaticTest@4411d970]" name="test_Account_Login_Page_Appear_Correct_Pass" duration-ms="8477" started-at="2015-03-03T17:20:25Z" finished-at="2015-03-03T17:20:34Z">
+        <test-method status="FAIL" signature="test_Account_Login_Page_Appear_Correct_Fail()[pri:0, instance:com.booj.base.StaticTest@5d624da6]" name="test_Account_Login_Page_Appear_Correct_Fail" duration-ms="8735" started-at="2015-03-05T16:15:00Z" finished-at="2015-03-05T16:15:09Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:494)
+	at org.testng.Assert.assertTrue(Assert.java:42)
+	at org.testng.Assert.assertTrue(Assert.java:52)
+	at com.booj.base.StaticTest.test_Account_Login_Page_Appear_Correct_Fail(StaticTest.java:24)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test_Account_Login_Page_Appear_Correct_Pass -->
-        <test-method status="PASS" signature="tearDownAfterTestMethod()[pri:0, instance:com.booj.base.StaticTest@4411d970]" name="tearDownAfterTestMethod" is-config="true" duration-ms="608" started-at="2015-03-03T17:20:34Z" finished-at="2015-03-03T17:20:34Z">
+        </test-method> <!-- test_Account_Login_Page_Appear_Correct_Fail -->
+        <test-method status="PASS" signature="tearDownAfterTestMethod()[pri:0, instance:com.booj.base.StaticTest@5d624da6]" name="tearDownAfterTestMethod" is-config="true" duration-ms="350" started-at="2015-03-05T16:15:10Z" finished-at="2015-03-05T16:15:11Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownAfterTestMethod -->
+        <test-method status="PASS" signature="setupBeforeTestMethod()[pri:0, instance:com.booj.base.StaticTest@5d624da6]" name="setupBeforeTestMethod" is-config="true" duration-ms="2409" started-at="2015-03-05T16:15:11Z" finished-at="2015-03-05T16:15:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupBeforeTestMethod -->
+        <test-method status="PASS" signature="test_Account_Login_Page_Appear_Correct_Pass()[pri:0, instance:com.booj.base.StaticTest@5d624da6]" name="test_Account_Login_Page_Appear_Correct_Pass" duration-ms="6529" started-at="2015-03-05T16:15:13Z" finished-at="2015-03-05T16:15:20Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_Account_Login_Page_Appear_Correct_Pass -->
+        <test-method status="PASS" signature="tearDownAfterTestMethod()[pri:0, instance:com.booj.base.StaticTest@5d624da6]" name="tearDownAfterTestMethod" is-config="true" duration-ms="404" started-at="2015-03-05T16:15:20Z" finished-at="2015-03-05T16:15:20Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownAfterTestMethod -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.booj.base.StaticTest@5d624da6]" name="tearDown" is-config="true" duration-ms="1804" started-at="2015-03-05T16:15:21Z" finished-at="2015-03-05T16:15:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
       </class> <!-- com.booj.base.StaticTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
