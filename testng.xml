@@ -9,20 +9,20 @@
 <parameter name="browser" value="FIREFOX"></parameter>
 <parameter name="version" value="23.0"></parameter>
 <parameter name="internal" value="true"></parameter> -->
-<test name="PassTest" parallel="tests" thread-count="1" >
-<parameter name="browser" value="Firefox"/>
+<test name="StaticTest" parallel="tests" thread-count="2" >
+<!-- <parameter name="browser" value="Firefox"/> -->
     <classes>
-       <class name="com.booj.base.PassTest" >
+       <class name="com.booj.base.StaticTest" >
        </class>
     </classes>
 </test>
 <!-- -->
-<test name="FailTest" parallel="tests" thread-count="1" >
+<!-- <test name="FailTest" parallel="tests" thread-count="1" >
 <parameter name="browser" value="Firefox"/>
     <classes>
        <class name="com.booj.base.FailTest" >
        </class>
     </classes>
-</test>
+</test> -->
 <!-- -->
 </suite>
