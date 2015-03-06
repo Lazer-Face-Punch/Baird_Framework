@@ -213,7 +213,9 @@ public class PDFListener implements ITestListener {
 			
 			
 			Chunk imdb = new Chunk("[SCREEN SHOT]", new Font(Font.TIMES_ROMAN, Font.DEFAULTSIZE, Font.UNDERLINE));
-			imdb.setAction(new PdfAction(/*"file:///"+*/file));
+			imdb.setAction(new PdfAction("file:///"+file));
+			
+			file.replace("http://","");
 			
 			Paragraph excep = new Paragraph(
 					throwable.toString());
