@@ -155,7 +155,7 @@ public class PDFListener implements ITestListener {
 	 */
 	public void onTestFailure(ITestResult result) {
 		log("onTestFailure("+result+")");
-		String file = System.getProperty("http://localhost:8080/job/PDF%20test/ws/")+"\\"+"screenshot"+(new Random().nextInt())+".png";
+		String file = System.getProperty("user.dir")+"\\"+"screenshot"+(new Random().nextInt())+".png";
 		try{
 			ScreenShot.takeSnapShot(Driver.getInstance(), file);
 		} catch (Exception e) {
