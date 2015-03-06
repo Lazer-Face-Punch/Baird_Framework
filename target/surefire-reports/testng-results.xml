@@ -2,28 +2,16 @@
 <testng-results skipped="0" failed="1" total="2" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="smoke-test-suite" duration-ms="21707" started-at="2015-03-02T21:37:22Z" finished-at="2015-03-02T21:37:44Z">
+  <suite name="smoke-test-suite" duration-ms="25555" started-at="2015-03-06T00:52:49Z" finished-at="2015-03-06T00:53:14Z">
     <groups>
     </groups>
-    <test name="FailTest" duration-ms="16527" started-at="2015-03-02T21:37:22Z" finished-at="2015-03-02T21:37:38Z">
-      <class name="com.booj.base.FailTest">
-        <test-method status="PASS" signature="setUpBeforeTestClass(java.lang.String, java.lang.reflect.Method)[pri:0, instance:com.booj.base.FailTest@4cb2c100]" name="setUpBeforeTestClass" is-config="true" duration-ms="10128" started-at="2015-03-02T14:37:22Z" finished-at="2015-03-02T14:37:32Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Firefox]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[public void com.booj.base.FailTest.test_Account_Login_Page_Appear_Correct_Fail() throws java.lang.Exception]]>
-              </value>
-            </param>
-          </params>
+    <test name="StaticTest" duration-ms="25555" started-at="2015-03-06T00:52:49Z" finished-at="2015-03-06T00:53:14Z">
+      <class name="com.booj.base.StaticTest">
+        <test-method status="PASS" signature="setupBeforeTestMethod()[pri:0, instance:com.booj.base.StaticTest@3dd3bcd]" name="setupBeforeTestMethod" is-config="true" duration-ms="3505" started-at="2015-03-05T17:52:49Z" finished-at="2015-03-05T17:52:53Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUpBeforeTestClass -->
-        <test-method status="FAIL" signature="test_Account_Login_Page_Appear_Correct_Fail()[pri:0, instance:com.booj.base.FailTest@4cb2c100]" name="test_Account_Login_Page_Appear_Correct_Fail" duration-ms="5876" started-at="2015-03-02T14:37:32Z" finished-at="2015-03-02T14:37:38Z">
+        </test-method> <!-- setupBeforeTestMethod -->
+        <test-method status="FAIL" signature="test_Account_Login_Page_Appear_Correct_Fail()[pri:0, instance:com.booj.base.StaticTest@3dd3bcd]" name="test_Account_Login_Page_Appear_Correct_Fail" duration-ms="9216" started-at="2015-03-05T17:52:53Z" finished-at="2015-03-05T17:53:02Z">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[expected [true] but found [false]]]>
@@ -34,7 +22,7 @@
 	at org.testng.Assert.failNotEquals(Assert.java:494)
 	at org.testng.Assert.assertTrue(Assert.java:42)
 	at org.testng.Assert.assertTrue(Assert.java:52)
-	at com.booj.base.FailTest.test_Account_Login_Page_Appear_Correct_Fail(FailTest.java:25)
+	at com.booj.base.StaticTest.test_Account_Login_Page_Appear_Correct_Fail(StaticTest.java:24)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -61,53 +49,27 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_Account_Login_Page_Appear_Correct_Fail -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.booj.base.FailTest@4cb2c100]" name="tearDown" is-config="true" duration-ms="509" started-at="2015-03-02T14:37:38Z" finished-at="2015-03-02T14:37:38Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=test_Account_Login_Page_Appear_Correct_Fail status=FAILURE method=FailTest.test_Account_Login_Page_Appear_Correct_Fail()[pri:0, instance:com.booj.base.FailTest@4cb2c100] output={null}]]]>
-              </value>
-            </param>
-          </params>
+        <test-method status="PASS" signature="tearDownAfterTestMethod()[pri:0, instance:com.booj.base.StaticTest@3dd3bcd]" name="tearDownAfterTestMethod" is-config="true" duration-ms="340" started-at="2015-03-05T17:53:04Z" finished-at="2015-03-05T17:53:04Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.booj.base.FailTest -->
-    </test> <!-- FailTest -->
-    <test name="PassTest" duration-ms="21707" started-at="2015-03-02T21:37:22Z" finished-at="2015-03-02T21:37:44Z">
-      <class name="com.booj.base.PassTest">
-        <test-method status="PASS" signature="setUpBeforeTestClass(java.lang.String, java.lang.reflect.Method)[pri:0, instance:com.booj.base.PassTest@6108b2d7]" name="setUpBeforeTestClass" is-config="true" duration-ms="16274" started-at="2015-03-02T14:37:22Z" finished-at="2015-03-02T14:37:38Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Firefox]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[public void com.booj.base.PassTest.test_Account_Login_Page_Appear_Correct_Pass() throws java.lang.Exception]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- tearDownAfterTestMethod -->
+        <test-method status="PASS" signature="setupBeforeTestMethod()[pri:0, instance:com.booj.base.StaticTest@3dd3bcd]" name="setupBeforeTestMethod" is-config="true" duration-ms="2762" started-at="2015-03-05T17:53:04Z" finished-at="2015-03-05T17:53:07Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUpBeforeTestClass -->
-        <test-method status="PASS" signature="test_Account_Login_Page_Appear_Correct_Pass()[pri:0, instance:com.booj.base.PassTest@6108b2d7]" name="test_Account_Login_Page_Appear_Correct_Pass" duration-ms="5076" started-at="2015-03-02T14:37:38Z" finished-at="2015-03-02T14:37:43Z">
+        </test-method> <!-- setupBeforeTestMethod -->
+        <test-method status="PASS" signature="test_Account_Login_Page_Appear_Correct_Pass()[pri:0, instance:com.booj.base.StaticTest@3dd3bcd]" name="test_Account_Login_Page_Appear_Correct_Pass" duration-ms="7360" started-at="2015-03-05T17:53:07Z" finished-at="2015-03-05T17:53:14Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_Account_Login_Page_Appear_Correct_Pass -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.booj.base.PassTest@6108b2d7]" name="tearDown" is-config="true" duration-ms="347" started-at="2015-03-02T14:37:43Z" finished-at="2015-03-02T14:37:44Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=test_Account_Login_Page_Appear_Correct_Pass status=SUCCESS method=PassTest.test_Account_Login_Page_Appear_Correct_Pass()[pri:0, instance:com.booj.base.PassTest@6108b2d7] output={null}]]]>
-              </value>
-            </param>
-          </params>
+        <test-method status="PASS" signature="tearDownAfterTestMethod()[pri:0, instance:com.booj.base.StaticTest@3dd3bcd]" name="tearDownAfterTestMethod" is-config="true" duration-ms="409" started-at="2015-03-05T17:53:14Z" finished-at="2015-03-05T17:53:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownAfterTestMethod -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.booj.base.StaticTest@3dd3bcd]" name="tearDown" is-config="true" duration-ms="2015" started-at="2015-03-05T17:53:15Z" finished-at="2015-03-05T17:53:17Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.booj.base.PassTest -->
-    </test> <!-- PassTest -->
+      </class> <!-- com.booj.base.StaticTest -->
+    </test> <!-- StaticTest -->
   </suite> <!-- smoke-test-suite -->
 </testng-results>

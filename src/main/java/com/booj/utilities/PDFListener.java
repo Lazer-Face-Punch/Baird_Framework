@@ -155,7 +155,7 @@ public class PDFListener implements ITestListener {
 	 */
 	public void onTestFailure(ITestResult result) {
 		log("onTestFailure("+result+")");
-		String file = System.getProperty("user.dir")+"\\"+"screenshot"+(new Random().nextInt())+".png";
+		String file = System.getProperty("http://localhost:8080/job/PDF%20test/ws/")+"\\"+"screenshot"+(new Random().nextInt())+".png";
 		try{
 			ScreenShot.takeSnapShot(Driver.getInstance(), file);
 		} catch (Exception e) {
@@ -213,7 +213,7 @@ public class PDFListener implements ITestListener {
 			
 			
 			Chunk imdb = new Chunk("[SCREEN SHOT]", new Font(Font.TIMES_ROMAN, Font.DEFAULTSIZE, Font.UNDERLINE));
-			imdb.setAction(new PdfAction("file:///"+file));
+			imdb.setAction(new PdfAction(/*"file:///"+*/file));
 			
 			Paragraph excep = new Paragraph(
 					throwable.toString());
@@ -270,8 +270,9 @@ public class PDFListener implements ITestListener {
 	 */
 	public void onStart(ITestContext context) {
 		log("onStart("+context+")");
-		//file = new File("//");
-		file = new File("C:/Users/brenden/workspace/Maven_Testing/baird-framework/AutomatedTestsRunReport/SmokeTestReport.pdf");
+		/*file = new File("user.dir");*/
+		//file = new File("C:/Users/brenden/workspace/Maven_Testing/baird-framework/AutomatedTestsRunReport/SmokeTestReport.pdf");
+		file = new File("http://localhost:8080/job/PDF%20test/ws/AutomatedTestsRunReport/SmokeTestReport.pdf");
 		
 		// if file doesn't exists, then create it
 		if (!file.exists()) {
