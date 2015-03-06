@@ -272,7 +272,7 @@ public class PDFListener implements ITestListener {
 		log("onStart("+context+")");
 		/*file = new File("user.dir");*/
 		//file = new File("C:/Users/brenden/workspace/Maven_Testing/baird-framework/AutomatedTestsRunReport/SmokeTestReport.pdf");
-		file = new File("http://localhost:8080/job/PDF%20test/ws/AutomatedTestsRunReport/SmokeTestReport.pdf");
+		file = new File("C:/Users/brenden/.jenkins/jobs/PDF test/workspace/AutomatedTestsRunReport/SmokeTestReport.pdf");
 		
 		// if file doesn't exists, then create it
 		if (!file.exists()) {
