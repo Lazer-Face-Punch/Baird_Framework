@@ -14,12 +14,13 @@ import com.booj.driver.Driver;
 
 public class AccountLoginStatic {
 	/*static WebDriver driver;*/
-	static By loginPopup = By.linkText("Log In");
+	private static By loginPopup = By.linkText("Log In");
 	/*By popupBox = By.id("account_login_form");*/
-	static By email = By.cssSelector("div.fancybox-inner > #account_login_form > #account_login_ajax > fieldset.clearfix > div.form-group > #wua-email");
-	static By password = By.cssSelector("div.fancybox-inner > #account_login_form > #account_login_ajax > fieldset.clearfix > div.form-group > #wua-pass");
-	static By login = By.cssSelector("div.fancybox-inner > #account_login_form > #account_login_ajax > fieldset.clearfix > input[name=\"Submit\"]");
+	private static By email = By.cssSelector("div.fancybox-inner > #account_login_form > #account_login_ajax > fieldset.clearfix > div.form-group > #wua-email");
+	private static By password = By.cssSelector("div.fancybox-inner > #account_login_form > #account_login_ajax > fieldset.clearfix > div.form-group > #wua-pass");
+	private static By login = By.cssSelector("div.fancybox-inner > #account_login_form > #account_login_ajax > fieldset.clearfix > input[name=\"Submit\"]");
 	@FindBy(className="account-user-name")static WebElement welcomeText;
+	private static By logout = By.cssSelector(".acccount-user-block.hidden-print>a");
 
 	
 	private static Logger Log = Logger.getLogger(AccountLoginStatic.class.getName());
@@ -91,6 +92,11 @@ public static String getLoginWelcome(){
 	return welcomeText.getText();
 }
 
+//Logout
+public static void clickLogout(){
+	Driver.Instance.findElement(logout).click();
+}
+
 
 
 /**
@@ -121,6 +127,10 @@ public static void loginToBairdAccount(String strUserName, String strPassword){
 	//Verify Welcome Text
 	AccountLoginStatic.getLoginWelcome();
 	Log.info("Verify Welcome Text");
+	
+	//Logout
+	AccountLoginStatic.clickLogout();
+	Log.info("Click Logout");
 	
 }
 }

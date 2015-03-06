@@ -191,3 +191,17 @@
 2015-03-06 15:58:13,668 INFO  [AccountLoginStatic] Click login button 
 2015-03-06 15:58:17,574 INFO  [AccountLoginStatic] Verify Welcome Text 
 2015-03-06 15:58:20,108 INFO  [BaseSuperStatic] Browser Closed 
+2015-03-06 16:21:52,930 INFO  [BaseSuperStatic] Browser Started 
+2015-03-06 16:21:56,898 INFO  [AccountLoginStatic] Click account menu item 
+2015-03-06 16:21:57,223 INFO  [AccountLoginStatic] Fill user name 
+2015-03-06 16:21:57,290 INFO  [AccountLoginStatic] Fill password 
+2015-03-06 16:21:57,391 INFO  [AccountLoginStatic] Click login button 
+2015-03-06 16:22:20,533 INFO  [BaseSuperStatic] Browser Closed 
+2015-03-06 16:36:49,451 INFO  [BaseSuperStatic] Browser Started 
+2015-03-06 16:36:52,234 INFO  [AccountLoginStatic] Click account menu item 
+2015-03-06 16:36:52,564 INFO  [AccountLoginStatic] Fill user name 
+2015-03-06 16:36:52,714 INFO  [AccountLoginStatic] Fill password 
+2015-03-06 16:36:52,825 INFO  [AccountLoginStatic] Click login button 
+2015-03-06 16:37:02,130 INFO  [AccountLoginStatic] Verify Welcome Text 
+2015-03-06 16:37:03,299 INFO  [AccountLoginStatic] Click Logout 
+2015-03-06 16:37:04,548 INFO  [BaseSuperStatic] Browser Closed 
