@@ -40,8 +40,10 @@ public class testte {
 	
 	@Test
 	public void test(){
-		String file = new String("C:/Users/brenden/.jenkins/jobs/PDF test/workspace/AutomatedTestsRunReport/SmokeTestReport.pdf");
-		String replaced = file.replace("C:/Users/brenden/.jenkins/", "localhost:8080/");
+		String file = System.getProperty("user.dir")+"\\"+"screenshot"+(new Random().nextInt())+".png";
+		System.out.println(file);
+		//String file = new String("C:/Users/brenden/.jenkins/jobs/PDF test/workspace/AutomatedTestsRunReport/SmokeTestReport.pdf");
+		String replaced = file.replace("C:\\Users\\brenden\\workspace\\Maven_Testing\\", "localhost:8080/");
 		System.out.println(replaced);
 	}
 
