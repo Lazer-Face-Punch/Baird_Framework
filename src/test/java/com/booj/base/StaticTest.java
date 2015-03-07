@@ -23,6 +23,7 @@ public class StaticTest extends BaseSuperStatic {
 		//Returns welcome title and asserts true
 		Assert.assertTrue(AccountLoginStatic.getLoginWelcome().equals("Welcome, brenden thornsberr"));
 		
+		AccountLoginStatic.logoutOfBairdAccount();
 		
 	}
 	

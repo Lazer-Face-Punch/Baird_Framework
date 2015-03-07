@@ -14,13 +14,14 @@ import com.booj.driver.Driver;
 
 public class AccountLoginStatic {
 	/*static WebDriver driver;*/
-	private static By loginPopup = By.linkText("Log In");
+	private static By loginButton = By.linkText("Log In");
 	/*By popupBox = By.id("account_login_form");*/
 	private static By email = By.cssSelector("div.fancybox-inner > #account_login_form > #account_login_ajax > fieldset.clearfix > div.form-group > #wua-email");
 	private static By password = By.cssSelector("div.fancybox-inner > #account_login_form > #account_login_ajax > fieldset.clearfix > div.form-group > #wua-pass");
 	private static By login = By.cssSelector("div.fancybox-inner > #account_login_form > #account_login_ajax > fieldset.clearfix > input[name=\"Submit\"]");
-	@FindBy(className="account-user-name")static WebElement welcomeText;
-	private static By logout = By.cssSelector(".acccount-user-block.hidden-print>a");
+	@FindBy(className="account-user-name")private static WebElement welcomeText;
+	//@FindBy(linkText="Log Out") private static WebElement logout;
+	private static By logout = By.linkText("Log Out");
 
 	
 	private static Logger Log = Logger.getLogger(AccountLoginStatic.class.getName());
@@ -67,7 +68,7 @@ public static void loginInitialize(){
 
 //Open Login page popup
 public static void clickLoginPopup(){
-	Driver.Instance.findElement(loginPopup).click();
+	Driver.Instance.findElement(loginButton).click();
 }
 
 
@@ -95,6 +96,12 @@ public static String getLoginWelcome(){
 //Logout
 public static void clickLogout(){
 	Driver.Instance.findElement(logout).click();
+}
+
+//Verify logged out
+public static void verifyLoggedOut(){
+	new WebDriverWait(Driver.Instance, 15)
+	.until(ExpectedConditions.visibilityOf((WebElement) loginButton));
 }
 
 
@@ -128,9 +135,17 @@ public static void loginToBairdAccount(String strUserName, String strPassword){
 	AccountLoginStatic.getLoginWelcome();
 	Log.info("Verify Welcome Text");
 	
-	//Logout
-	AccountLoginStatic.clickLogout();
-	Log.info("Click Logout");
 	
+}
+
+public static void logoutOfBairdAccount(){
+	
+	//Logout
+		AccountLoginStatic.clickLogout();
+		Log.info("Click Logout");
+		
+		//Verify Logout
+		AccountLoginStatic.verifyLoggedOut();
+		Log.info("Verified Log Out");
 }
 }
