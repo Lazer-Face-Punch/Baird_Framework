@@ -1,4 +1,4 @@
-package com.booj.PageObject;
+package com.booj.pageObject;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;

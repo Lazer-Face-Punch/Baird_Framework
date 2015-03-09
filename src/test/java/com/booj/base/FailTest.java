@@ -3,18 +3,18 @@ package com.booj.base;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.booj.PageObject.AccountLoginTest;
+import com.booj.pageObject.AccountLogin;
 
-public class FailTest extends BaseTestSuper {
+public class FailTest extends BaseSuper {
 	/* WebDriver driver; */
-	AccountLoginTest objLogin; 
+	AccountLogin objLogin; 
 	/* BaseTestSub objSetup; */
 	/*test*/
 
 	@Test
 	public void test_Account_Login_Page_Appear_Correct_Fail() throws Exception {
 		// Create login page object
-		objLogin = new AccountLoginTest(driver);
+		objLogin = new AccountLogin(driver);
 
 		objLogin.loginToBairdAccount("brenden@activewebsite.com", "active");
 		

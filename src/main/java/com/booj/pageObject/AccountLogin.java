@@ -1,4 +1,4 @@
-package com.booj.PageObject;
+package com.booj.pageObject;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -9,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
- public class AccountLoginTest {
+ public class AccountLogin {
 	
 	WebDriver driver;
 	By loginPopup = By.linkText("Log In");
@@ -26,7 +26,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  
 
 	
-public AccountLoginTest(WebDriver driver){ 
+public AccountLogin(WebDriver driver){ 
 	/*this.driver = driver;*/
 	PageFactory.initElements(driver, this);
 	driver.get("http://www.bairdwarner.com");

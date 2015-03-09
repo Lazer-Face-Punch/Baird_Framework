@@ -11,7 +11,7 @@ import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Optional;
 
-public abstract class BaseTestSuper {
+public abstract class BaseSuper {
 	protected WebDriver driver;
 	/*protected AccountLoginTest objLogin;*/
 

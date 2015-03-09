@@ -18,7 +18,7 @@ import com.lowagie.text.Chunk;
 import com.lowagie.text.Font;
 import com.lowagie.text.pdf.PdfAction;
 
-public class testte {
+public class Testing {
 	
 	FileOutputStream fop = null;
 	File file;

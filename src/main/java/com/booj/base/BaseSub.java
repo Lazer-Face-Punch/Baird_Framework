@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.BeforeTest;
 
-public class BaseTestSub extends BaseTestSuper {
+public class BaseSub extends BaseSuper {
 	protected WebDriver driver;
 
 	/* public String baseUrl = "http://bairdwarner.com/"; */

@@ -19,8 +19,6 @@ import javax.mail.internet.MimeMultipart;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.Point;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
@@ -28,7 +26,7 @@ import org.testng.annotations.BeforeMethod;
 import com.booj.driver.Driver;
 import com.booj.utilities.ScreenShot;
 
-public class BaseSuperStatic extends ScreenShot {
+public abstract class BaseSuperStatic extends ScreenShot {
 
 	private static Logger Log = Logger.getLogger(BaseSuperStatic.class.getName());
 	
@@ -37,8 +35,6 @@ public class BaseSuperStatic extends ScreenShot {
 	public void setupBeforeTestMethod() throws Exception{
 		DOMConfigurator.configure("log4j.xml");
 		Driver.Initialize();
-		Driver.Instance.manage().window().setPosition(new Point(0,0));
-		Driver.Instance.manage().window().setSize(new Dimension(1024,768));
 		Log.info("Browser Started");
 	}
 	
@@ -55,7 +51,7 @@ public class BaseSuperStatic extends ScreenShot {
 
     @AfterSuite
 
-    public void tearDown(){
+    public void EmailPDFAfterSuite(){
 
         sendPDFReportByGMail("brenden@activewebsite.com", "$am6reRhH$", "brenden@activewebsite.com", "PDF Report", "");
 
