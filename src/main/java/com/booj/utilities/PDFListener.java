@@ -4,6 +4,9 @@ import java.awt.Color;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URL;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Random;
@@ -214,9 +217,17 @@ public class PDFListener implements ITestListener {
 			
 			
 			Chunk imdb = new Chunk("[SCREEN SHOT]", new Font(Font.TIMES_ROMAN, Font.DEFAULTSIZE, Font.UNDERLINE));
-			String replaced = file.replace("C:\\Users\\brenden\\.jenkins\\jobs\\PDF test\\workspace\\", "localhost:8080\\job\\PDF%20test\\ws\\");
-			imdb.setAction(new PdfAction(/*"file:///"+*/replaced));
-			System.out.println(replaced);
+			String replaced = file.replace("C:\\Users\\brenden\\.jenkins\\jobs\\PDF test\\workspace\\", "/job/PDF test/ws/");
+			URI uri = null;
+			URL url = null;	
+				try {
+					url = new URL("http", "localhost", 8080, replaced);
+				} catch (MalformedURLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			imdb.setAction(new PdfAction(/*"file:///"+*/url.toString()));
+			System.out.println(url.toString());
 			//"C:\\Users\\brenden\\workspace\\Maven_Testing\\baird-framework\\"
 			//"C:\\Users\\brenden\\.jenkins\\"
 			

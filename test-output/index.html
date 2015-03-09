@@ -48,7 +48,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-                    <span>C:\Users\brenden\AppData\Local\Temp\testng-eclipse--2054226336\testng-customsuite.xml</span>
+                    <span>C:\Users\brenden\AppData\Local\Temp\testng-eclipse--61719438\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -101,7 +101,7 @@
                     <div class="method-list-content failed suite-Default_suite">
                       <span>
                         <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.booj.base.StaticTest" hash-for-method="test_Account_Login_Page_Appear_Correct_Fail">test_Account_Login_Page_Appear_Correct_Fail</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.booj.base.testte" hash-for-method="test">test</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Default_suite -->
@@ -119,20 +119,21 @@
           <div class="suite-Default_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
-              <span class="class-name">com.booj.base.StaticTest</span>
+              <span class="class-name">com.booj.base.testte</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="test_Account_Login_Page_Appear_Correct_Fail">
-                  </a> <!-- test_Account_Login_Page_Appear_Correct_Fail -->
-                  <span class="method-name">test_Account_Login_Page_Appear_Correct_Fail</span>
-                  <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
-	at org.testng.Assert.fail(Assert.java:94)
-	at org.testng.Assert.failNotEquals(Assert.java:494)
-	at org.testng.Assert.assertTrue(Assert.java:42)
-	at org.testng.Assert.assertTrue(Assert.java:52)
-	at com.booj.base.StaticTest.test_Account_Login_Page_Appear_Correct_Fail(StaticTest.java:24)
+                  <a name="test">
+                  </a> <!-- test -->
+                  <span class="method-name">test</span>
+                  <div class="stack-trace">java.net.URISyntaxException: Illegal character in path at index 29: http://localhost:8080/job/PDF test/ws/screenshot1512330295.png
+	at java.net.URI$Parser.fail(URI.java:2848)
+	at java.net.URI$Parser.checkChars(URI.java:3021)
+	at java.net.URI$Parser.parseHierarchical(URI.java:3105)
+	at java.net.URI$Parser.parse(URI.java:3053)
+	at java.net.URI.&lt;init&gt;(URI.java:588)
+	at com.booj.base.testte.test(testte.java:54)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -166,7 +167,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\brenden\AppData\Local\Temp\testng-eclipse--2054226336\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\brenden\AppData\Local\Temp\testng-eclipse--61719438\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -175,7 +176,7 @@
 &lt;suite name=&quot;Default suite&quot;&gt;
   &lt;test verbose=&quot;2&quot; name=&quot;Default test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.booj.base.StaticTest&quot;/&gt;
+      &lt;class name=&quot;com.booj.base.testte&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -217,14 +218,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'test_Account_Login_Page_Appear_Correct_Fail')
-data.setCell(0, 2, 'com.booj.base.StaticTest')
-data.setCell(0, 3, 14319);
+data.setCell(0, 1, 'test')
+data.setCell(0, 2, 'com.booj.base.testte')
+data.setCell(0, 3, 10);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 14 seconds</span>
+              <span class="suite-total-time">Total running time: 10 ms</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -250,25 +251,13 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.booj.base.StaticTest</div> <!-- chronological-class-name -->
-              <div class="configuration-method before">
-                <span class="method-name">setupBeforeTestMethod</span>
-                <span class="method-start">0 ms</span>
-              </div> <!-- configuration-method before -->
+              <div class="chronological-class-name">com.booj.base.testte</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">test_Account_Login_Page_Appear_Correct_Fail</span>
-                <span class="method-start">3089 ms</span>
+                <span class="method-name">test</span>
+                <span class="method-start">0 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDownAfterTestMethod</span>
-                <span class="method-start">17829 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-suite after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">18659 ms</span>
-              </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->
