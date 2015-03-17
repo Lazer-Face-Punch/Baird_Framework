@@ -12,6 +12,8 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
+        <skipTests>false</skipTests>
   </properties>
   
    <build>
@@ -32,8 +34,9 @@
   	 	<version>2.18.1</version>
         <configuration>
          <suiteXmlFiles>
-         <suiteXmlFile>testng.xml</suiteXmlFile>
+         <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
          </suiteXmlFiles>
+         <skipTests>${skipTests}</skipTests>
         </configuration>
       </plugin>
     </plugins>
