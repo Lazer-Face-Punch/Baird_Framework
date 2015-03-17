@@ -13,7 +13,7 @@ public class Static extends BaseSuperStatic {
 
 	
 
-	@Test
+	@Test(enabled=false)
 	public void test_Account_Login_Page_Appear_Correct_Fail() throws Exception {
 	
 		// Create login page object
@@ -27,7 +27,7 @@ public class Static extends BaseSuperStatic {
 	}
 		
 	
-@Test
+@Test(enabled=false)
 	public void test_Account_Login_Page_Appear_Correct_Pass() throws Exception {
 		// Create login page object
 		AccountLoginStatic.loginInitialize();
