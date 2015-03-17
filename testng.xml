@@ -1,6 +1,6 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
  
-<suite name="smoke-test-suite" parallel="tests" thread-count="2" preserve-order="false">
+<suite name="smoke-test-suite" verbose="2" parallel="methods" thread-count="2"  >
 <!-- <parameter name="ReportLocation" value="."></parameter>
 <parameter name="remoteURL" value="localhost"></parameter>
 <parameter name="remotePort" value="4444"></parameter>
@@ -9,18 +9,18 @@
 <parameter name="browser" value="FIREFOX"></parameter>
 <parameter name="version" value="23.0"></parameter>
 <parameter name="internal" value="true"></parameter> -->
-<test name="StaticTest" parallel="tests" thread-count="2" >
+<test name="Fail "> 
 <!-- <parameter name="browser" value="Firefox"/> -->
     <classes>
-       <class name="com.booj.base.StaticTest" >
+       <class name="com.booj.base.IfTest" >
        </class>
     </classes>
 </test>
 <!-- -->
-<!-- <test name="FailTest" parallel="tests" thread-count="1" >
+<!-- <test name="Pass"> 
 <parameter name="browser" value="Firefox"/>
     <classes>
-       <class name="com.booj.base.FailTest" >
+       <class name="com.booj.base.PassTest" >
        </class>
     </classes>
 </test> -->

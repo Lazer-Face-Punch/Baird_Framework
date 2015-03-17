@@ -21,8 +21,8 @@ public class AccountLoginStatic {
 	private static By login = By.cssSelector("div.fancybox-inner > #account_login_form > #account_login_ajax > fieldset.clearfix > input[name=\"Submit\"]");
 	@FindBy(className="account-user-name")private static WebElement welcomeText;
 	//@FindBy(linkText="Log Out") private static WebElement logout;
-	private static By logout = By.linkText("Log Out");
-
+	private static By logout = By.linkText("Logout");
+	
 	
 	private static Logger Log = Logger.getLogger(AccountLoginStatic.class.getName());
 	
@@ -101,7 +101,7 @@ public static void clickLogout(){
 //Verify logged out
 public static void verifyLoggedOut(){
 	new WebDriverWait(Driver.Instance, 15)
-	.until(ExpectedConditions.visibilityOf((WebElement) loginButton));
+	.until(ExpectedConditions.visibilityOfElementLocated(loginButton));
 }
 
 

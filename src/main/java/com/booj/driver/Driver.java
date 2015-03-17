@@ -32,4 +32,3 @@ public class Driver {
 		Driver.Instance.quit();
 	}
 }
-

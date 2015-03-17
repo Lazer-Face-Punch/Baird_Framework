@@ -101,7 +101,7 @@ public class PDFListener implements ITestListener {
 			
 		}
 		
-		Paragraph p = new Paragraph("PASSED TESTS  -" + result.getMethod().getDescription(), new Font(Font.TIMES_ROMAN, Font.DEFAULTSIZE, Font.BOLD));
+		Paragraph p = new Paragraph("PASSED TESTS  -" + result.getTestClass().toString(), new Font(Font.TIMES_ROMAN, Font.DEFAULTSIZE, Font.BOLD));
 		p.setAlignment(Element.ALIGN_CENTER);
 		PdfPCell cell = new PdfPCell(p);
 		cell.setColspan(4);
@@ -171,7 +171,7 @@ public class PDFListener implements ITestListener {
 			
 		}
 		
-		Paragraph p = new Paragraph("FAILED TEST -" + result.getMethod().getDescription(), new Font(Font.TIMES_ROMAN, Font.DEFAULTSIZE, Font.BOLD));
+		Paragraph p = new Paragraph("FAILED TEST -" + result.getTestClass().toString(), new Font(Font.TIMES_ROMAN, Font.DEFAULTSIZE, Font.BOLD));
 		p.setAlignment(Element.ALIGN_CENTER);
 		PdfPCell cell = new PdfPCell(p);
 		cell.setColspan(4);
@@ -218,7 +218,7 @@ public class PDFListener implements ITestListener {
 			
 			Chunk imdb = new Chunk("[SCREEN SHOT]", new Font(Font.TIMES_ROMAN, Font.DEFAULTSIZE, Font.UNDERLINE));
 			String replaced = file.replace("C:\\Users\\brenden\\.jenkins\\jobs\\PDF test\\workspace\\", "/job/PDF test/ws/");
-			URI uri = null;
+			//URI uri = null;
 			URL url = null;	
 				try {
 					url = new URL("http", "localhost", 8080, replaced);
@@ -286,10 +286,11 @@ public class PDFListener implements ITestListener {
 	 */
 	public void onStart(ITestContext context) {
 		log("onStart("+context+")");
+		 file = new File (System.getProperty("user.dir")+"/AutomatedTestsRunReport/SmokeTestReport.pdf");
 		/*file = new File("user.dir");*/
 		//file = new File("C:/Users/brenden/workspace/Maven_Testing/baird-framework/AutomatedTestsRunReport/SmokeTestReport.pdf");
-		file = new File("C:/Users/brenden/.jenkins/jobs/PDF test/workspace/AutomatedTestsRunReport/SmokeTestReport.pdf");
-		
+		//file = new File("C:/Users/brenden/.jenkins/jobs/PDF test/workspace/AutomatedTestsRunReport/SmokeTestReport.pdf");
+		System.out.println(file);
 		// if file doesn't exists, then create it
 		if (!file.exists()) {
 			try {
@@ -487,6 +488,14 @@ public class PDFListener implements ITestListener {
 		}
 		
 		this.document.close();
+		try {
+			Email.EmailPDFAfterSuite();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		
 	}
 	
 	/**
@@ -504,5 +513,115 @@ public class PDFListener implements ITestListener {
 		// TODO Auto-generated method stub
 		
 	}
+	
+	/*public static void EmailPDFAfterSuite(ITestResult result){
+		log("onTestSuccess("+result+")");
+        sendPDFReportByGMail("brenden@activewebsite.com", "$am6reRhH$", "brenden@activewebsite.com",  result.getMethod().toString() + "PDF Report", "");
+
+        }
+
+    
+
+    *//**
+
+     * Send email using java
+
+     * @param from
+
+     * @param pass
+
+     * @param to
+
+     * @param subject
+
+     * @param body
+
+     *//*
+
+    private static void sendPDFReportByGMail(String from, String pass, String to, String subject, String body) {
+    	
+Properties props = System.getProperties();
+
+String host = "smtp.gmail.com";
+
+props.put("mail.smtp.starttls.enable", "true");
+
+props.put("mail.smtp.host", host);
+
+props.put("mail.smtp.user", from);
+
+props.put("mail.smtp.password", pass);
+
+props.put("mail.smtp.port", "587");
+
+props.put("mail.smtp.auth", "true");
+
+Session session = Session.getDefaultInstance(props);
+
+MimeMessage message = new MimeMessage(session);
+
+try {
+
+    //Set from address
+
+message.setFrom(new InternetAddress(from));
+
+message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
+
+//Set subject
+
+message.setSubject(subject);
+
+message.setText(body);
+
+BodyPart objMessageBodyPart = new MimeBodyPart();
+
+objMessageBodyPart.setText("Please Find The Attached Report File!");
+
+Multipart multipart = new MimeMultipart();
+
+multipart.addBodyPart(objMessageBodyPart);
+
+objMessageBodyPart = new MimeBodyPart();
+
+//Set path to the pdf report file
+
+String filename = System.getProperty("user.dir")+"/AutomatedTestsRunReport/SmokeTestReport.pdf";
+
+//Create data source to attach the file in mail
+
+DataSource source = new FileDataSource(filename);
+
+objMessageBodyPart.setDataHandler(new DataHandler(source));
+
+objMessageBodyPart.setFileName(filename);
+
+multipart.addBodyPart(objMessageBodyPart);
+
+message.setContent(multipart);
+
+Transport transport = session.getTransport("smtp");
+
+transport.connect(host, from, pass);
+
+transport.sendMessage(message, message.getAllRecipients());
+
+transport.close();
+
+}
+
+catch (AddressException ae) {
+
+ae.printStackTrace();
+
+}
+
+catch (MessagingException me) {
+
+me.printStackTrace();
+
+}
+
+}*/
 }
 

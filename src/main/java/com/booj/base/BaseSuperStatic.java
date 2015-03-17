@@ -1,29 +1,12 @@
 package com.booj.base;
 
-import java.util.Properties;
-
-import javax.activation.DataHandler;
-import javax.activation.DataSource;
-import javax.activation.FileDataSource;
-import javax.mail.BodyPart;
-import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.Multipart;
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.AddressException;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeBodyPart;
-import javax.mail.internet.MimeMessage;
-import javax.mail.internet.MimeMultipart;
-
 import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 
 import com.booj.driver.Driver;
+import com.booj.utilities.Email;
 import com.booj.utilities.ScreenShot;
 
 public abstract class BaseSuperStatic extends ScreenShot {
@@ -36,6 +19,7 @@ public abstract class BaseSuperStatic extends ScreenShot {
 		DOMConfigurator.configure("log4j.xml");
 		Driver.Initialize();
 		Log.info("Browser Started");
+		System.out.println("Thread id = " + Thread.currentThread().getId());
 	}
 	
 	
@@ -45,11 +29,22 @@ public abstract class BaseSuperStatic extends ScreenShot {
 		DOMConfigurator.configure("log4j.xml");
 		Driver.tearDown();
 		Log.info("Browser Closed");
+		//Email.EmailPDFAfterSuite();
 	}
+	
+	
+	
+	
+	
+	/*@AfterSuite
+	
+	public void Email() {
+		Email.EmailPDFAfterSuite();
+	}*/
 	
 	 //After complete execution send pdf report by email
 
-    @AfterSuite
+   /* @AfterSuite
 
     public void EmailPDFAfterSuite(){
 
@@ -59,7 +54,7 @@ public abstract class BaseSuperStatic extends ScreenShot {
 
     
 
-    /**
+    *//**
 
      * Send email using java
 
@@ -73,7 +68,7 @@ public abstract class BaseSuperStatic extends ScreenShot {
 
      * @param body
 
-     */
+     *//*
 
     private static void sendPDFReportByGMail(String from, String pass, String to, String subject, String body) {
 
@@ -159,7 +154,7 @@ me.printStackTrace();
 
 }
 
-}
+}*/
 
 }  
 
