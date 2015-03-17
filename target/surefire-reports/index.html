@@ -23,7 +23,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -37,7 +37,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-smoke-test-suite">
-              <span class="suite-name border-failed">smoke-test-suite</span>
+              <span class="suite-name border-passed">smoke-test-suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -90,21 +90,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods, 1 failed,   1 passed</span>
-                  </li>
-                  <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-smoke-test-suite" class="hide-methods failed suite-smoke-test-suite"> (hide)</a> <!-- hide-methods failed suite-smoke-test-suite -->
-                      <a href="#" panel-name="suite-smoke-test-suite" class="show-methods failed suite-smoke-test-suite"> (show)</a> <!-- show-methods failed suite-smoke-test-suite -->
-                    </span>
-                    <div class="method-list-content failed suite-smoke-test-suite">
-                      <span>
-                        <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-smoke-test-suite" title="com.booj.base.StaticTest" hash-for-method="test_Account_Login_Page_Appear_Correct_Fail">test_Account_Login_Page_Appear_Correct_Fail</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content failed suite-smoke-test-suite -->
+                    <span class="method-stats">1 method,   1 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -115,7 +101,7 @@
                     <div class="method-list-content passed suite-smoke-test-suite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-smoke-test-suite" title="com.booj.base.StaticTest" hash-for-method="test_Account_Login_Page_Appear_Correct_Pass">test_Account_Login_Page_Appear_Correct_Pass</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-smoke-test-suite" title="com.booj.base.IfTest" hash-for-method="thtl">thtl</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-smoke-test-suite -->
@@ -130,40 +116,17 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-smoke-test-suite" class="panel smoke-test-suite">
-          <div class="suite-smoke-test-suite-class-failed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">com.booj.base.StaticTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="test_Account_Login_Page_Appear_Correct_Fail">
-                  </a> <!-- test_Account_Login_Page_Appear_Correct_Fail -->
-                  <span class="method-name">test_Account_Login_Page_Appear_Correct_Fail</span>
-                  <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
-	at com.booj.base.StaticTest.test_Account_Login_Page_Appear_Correct_Fail(StaticTest.java:24)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
-	at java.lang.Thread.run(Thread.java:745)
-... Removed 20 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-smoke-test-suite-class-failed -->
           <div class="suite-smoke-test-suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">com.booj.base.StaticTest</span>
+              <span class="class-name">com.booj.base.IfTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="test_Account_Login_Page_Appear_Correct_Pass">
-                  </a> <!-- test_Account_Login_Page_Appear_Correct_Pass -->
-                  <span class="method-name">test_Account_Login_Page_Appear_Correct_Pass</span>
+                  <a name="thtl">
+                  </a> <!-- thtl -->
+                  <span class="method-name">thtl</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -177,12 +140,12 @@
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite thread-count=&quot;2&quot; verbose=&quot;0&quot; name=&quot;smoke-test-suite&quot; parallel=&quot;tests&quot;&gt;
-  &lt;test thread-count=&quot;2&quot; name=&quot;StaticTest&quot; parallel=&quot;tests&quot;&gt;
+&lt;suite thread-count=&quot;2&quot; verbose=&quot;0&quot; name=&quot;smoke-test-suite&quot; parallel=&quot;methods&quot;&gt;
+  &lt;test name=&quot;Fail &quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.booj.base.StaticTest&quot;/&gt;
+      &lt;class name=&quot;com.booj.base.IfTest&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- StaticTest --&gt;
+  &lt;/test&gt; &lt;!-- Fail  --&gt;
 &lt;/suite&gt; &lt;!-- smoke-test-suite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -194,7 +157,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">StaticTest (1 class)</span>
+                <span class="test-name">Fail  (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -220,20 +183,16 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'test_Account_Login_Page_Appear_Correct_Fail')
-data.setCell(0, 2, 'com.booj.base.StaticTest')
-data.setCell(0, 3, 9216);
-data.setCell(1, 0, 1)
-data.setCell(1, 1, 'test_Account_Login_Page_Appear_Correct_Pass')
-data.setCell(1, 2, 'com.booj.base.StaticTest')
-data.setCell(1, 3, 7360);
+data.setCell(0, 1, 'thtl')
+data.setCell(0, 2, 'com.booj.base.IfTest')
+data.setCell(0, 3, 9);
 window.suiteTableData['smoke-test-suite']= { tableData: data, tableDiv: 'times-div-smoke-test-suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 16 seconds</span>
+              <span class="suite-total-time">Total running time: 9 ms</span>
               <div id="times-div-smoke-test-suite">
               </div> <!-- times-div-smoke-test-suite -->
             </div> <!-- times-div -->
@@ -248,9 +207,18 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-smoke-test-suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">0 ignored methods</span>
+            <span class="header-content">2 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.booj.base.IfTest</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">thig</span>
+                <br/>
+                <span class="ignored-method-name">thing</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-smoke-test-suite" class="panel">
@@ -259,37 +227,11 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.booj.base.StaticTest</div> <!-- chronological-class-name -->
-              <div class="configuration-method before">
-                <span class="method-name">setupBeforeTestMethod</span>
+              <div class="chronological-class-name">com.booj.base.IfTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">thtl</span>
                 <span class="method-start">0 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">test_Account_Login_Page_Appear_Correct_Fail</span>
-                <span class="method-start">3505 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDownAfterTestMethod</span>
-                <span class="method-start">14516 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">setupBeforeTestMethod</span>
-                <span class="method-start">14856 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">test_Account_Login_Page_Appear_Correct_Pass</span>
-                <span class="method-start">17618 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDownAfterTestMethod</span>
-                <span class="method-start">24978 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-suite after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">26234 ms</span>
-              </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->
