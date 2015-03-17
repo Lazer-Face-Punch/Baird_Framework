@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="smoke-test-suite" duration-ms="49" started-at="2015-03-17T20:50:07Z" finished-at="2015-03-17T20:50:07Z">
+  <suite name="smoke-test-suite" duration-ms="20" started-at="2015-03-17T22:23:02Z" finished-at="2015-03-17T22:23:02Z">
     <groups>
     </groups>
-    <test name="Fail " duration-ms="49" started-at="2015-03-17T20:50:07Z" finished-at="2015-03-17T20:50:07Z">
+    <test name="Fail " duration-ms="20" started-at="2015-03-17T22:23:02Z" finished-at="2015-03-17T22:23:02Z">
       <class name="com.booj.base.IfTest">
-        <test-method status="PASS" signature="thtl()[pri:0, instance:com.booj.base.IfTest@7a0ac6e3]" name="thtl" duration-ms="9" started-at="2015-03-17T14:50:07Z" finished-at="2015-03-17T14:50:07Z">
+        <test-method status="PASS" signature="thtl()[pri:0, instance:com.booj.base.IfTest@7a0ac6e3]" name="thtl" duration-ms="7" started-at="2015-03-17T16:23:02Z" finished-at="2015-03-17T16:23:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- thtl -->
