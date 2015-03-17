@@ -48,16 +48,16 @@ public AccountLoginStatic(WebDriver driver){
 	Driver.Instance.get("http://www.bairdwarner.com");
 }*/	
 
-public static AccountLoginStatic Login;
+protected static AccountLoginStatic Login;
 	
 
 
-public static AccountLoginStatic getLogin() {
+protected static AccountLoginStatic getLogin() {
 	return Login;
 }
 
 
-public static void setLogin(AccountLoginStatic login) {
+protected static void setLogin(AccountLoginStatic login) {
 	Login = login;
 }
 
