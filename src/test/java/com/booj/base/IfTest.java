@@ -34,7 +34,7 @@ public class IfTest {
 			}	
 		}else if (file.equals("C:\\Users\\brenden\\.jenkins\\jobs\\PDF test\\workspace")){
 			System.out.println("Jenkins");
-			String replaced = file.replace("C:\\Users\\brenden\\.jenkins\\jobs\\PDF test\\workspace\\", "/job/PDF test/ws/");
+			String replaced = file.replace("C:\\Users\\brenden\\.jenkins\\jobs\\PDF test\\workspace", "/job/PDF test/ws/");
 			URL url = null;	
 				try {
 					url = new URL("http", "localhost", 8080, replaced);
