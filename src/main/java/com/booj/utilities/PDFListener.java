@@ -36,10 +36,12 @@ import com.lowagie.text.pdf.PdfPTable;
 import com.lowagie.text.pdf.PdfWriter;
 
 
+
 /**
  * PDFListener
  */
 public class PDFListener implements ITestListener {
+	protected URL url = null;	
 	/**
 	 * Document
 	 */
@@ -217,7 +219,38 @@ public class PDFListener implements ITestListener {
 			
 			
 			Chunk imdb = new Chunk("[SCREEN SHOT]", new Font(Font.TIMES_ROMAN, Font.DEFAULTSIZE, Font.UNDERLINE));
-			String replaced = file.replace("C:\\Users\\brenden\\.jenkins\\jobs\\PDF test\\workspace\\", "/job/PDF test/ws/");
+			String directory = System.getProperty("user.dir");
+			System.out.println(directory);
+			if (directory.equals("C:\\Users\\brenden\\workspace\\Maven_Testing\\baird-framework")){
+				System.out.println("Local");
+				//URL url = null;	
+				try {
+					url = new File(directory.toString()).toURI().toURL();
+					System.out.println(url);
+		
+				} catch (MalformedURLException e) {
+					 //TODO Auto-generated catch block
+					e.printStackTrace();
+				}	
+			}else if (directory.equals("C:\\Users\\brenden\\.jenkins\\jobs\\PDF test\\workspace")){
+				System.out.println("Jenkins");
+				String replaced = file.replace("C:\\Users\\brenden\\.jenkins\\jobs\\PDF test\\workspace", "/job/PDF test/ws/");
+				//URL url = null;	
+					try {
+						url = new URL("http", "localhost", 8080, replaced);
+						System.out.println(url);
+					} catch (MalformedURLException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				 
+			}else{ 
+				System.out.println("User Directory Option Not Found");
+			}
+		
+			
+			
+			/*String replaced = file.replace("C:\\Users\\brenden\\.jenkins\\jobs\\PDF test\\workspace\\", "/job/PDF test/ws/");
 			//URI uri = null;
 			URL url = null;	
 				try {
@@ -225,7 +258,8 @@ public class PDFListener implements ITestListener {
 				} catch (MalformedURLException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
-				}
+				}*/
+			//URL url = null;
 			imdb.setAction(new PdfAction(/*"file:///"+*/url.toString()));
 			System.out.println(url.toString());
 			//"C:\\Users\\brenden\\workspace\\Maven_Testing\\baird-framework\\"

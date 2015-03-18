@@ -7,9 +7,11 @@ import java.util.Random;
 
 import org.testng.annotations.Test;
 
+import com.lowagie.text.pdf.PdfAction;
+
 public class IfTest {
 	File file;
-	
+	URL url = null;	
 	@Test(enabled = false)
 	public void thig(){
 		String file = System.getProperty("user.dir");
@@ -18,24 +20,24 @@ public class IfTest {
 	
 	@Test(enabled = true)
 	public void thtl(){
-		String file = System.getProperty("user.dir");
-		System.out.println(file);
+		String directory = System.getProperty("user.dir");
+		System.out.println(directory);
 		
-		if (file.equals("C:\\Users\\brenden\\workspace\\Maven_Testing\\baird-framework")){
+		if (directory.equals("C:\\Users\\brenden\\workspace\\Maven_Testing\\baird-framework")){
 			System.out.println("Local");
-			URL url = null;	
+			//URL url = null;	
 			try {
-				url = new URL("http", "file:///", file);
+				url = new File(directory.toString()).toURI().toURL();
 				System.out.println(url);
 	
 			} catch (MalformedURLException e) {
 				 //TODO Auto-generated catch block
 				e.printStackTrace();
 			}	
-		}else if (file.equals("C:\\Users\\brenden\\.jenkins\\jobs\\PDF test\\workspace")){
+		}else if (directory.equals("C:\\Users\\brenden\\.jenkins\\jobs\\PDF test\\workspace")){
 			System.out.println("Jenkins");
-			String replaced = file.replace("C:\\Users\\brenden\\.jenkins\\jobs\\PDF test\\workspace", "/job/PDF test/ws/");
-			URL url = null;	
+			String replaced = directory.replace("C:\\Users\\brenden\\.jenkins\\jobs\\PDF test\\workspace", "/job/PDF test/ws/");
+			//URL url = null;	
 				try {
 					url = new URL("http", "localhost", 8080, replaced);
 					System.out.println(url);
@@ -45,41 +47,16 @@ public class IfTest {
 				}
 			 
 		}else{ 
-			System.out.println("Not Found");
+			System.out.println("User Directory Option Not Found");
 		}
 		
+		//URL url = null;	
+	/*imdb.setAction(new PdfAction("file:///"+url.toString()));
+	System.out.println(url.toString());*/
 		}
 	
-	
-	@Test(enabled = false)
-	public void thing (){
-		String file = System.getProperty("user.dir")+"\\"+"screenshot"+(new Random().nextInt())+".png";
-		System.out.println(file);
-		URL url = null;	
-		if (System.getProperty("user.dir").equals("C:\\Users\\brenden\\workspace\\Maven_Testing\\baird-framework\\")){
-			try {
-				url = new URL("http", "file:///", file);
-				System.out.println(url);
-	
-			} catch (MalformedURLException e) {
-				 //TODO Auto-generated catch block
-				e.printStackTrace();
-			
-			}} else if
-		 (System.getProperty("user.dir").equals("C:\\Users\\brenden\\.jenkins\\jobs\\PDF test\\workspace\\")){
-		String replaced = file.replace("C:\\Users\\brenden\\.jenkins\\jobs\\PDF test\\workspace\\", "/job/PDF test/ws/");
-		//URL url = null;	
-			try {
-				url = new URL("http", "localhost", 8080, replaced);
-				System.out.println(url);
-			} catch (MalformedURLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		 }
-	}
 }
-	
+
 		
 /*file = new File (System.getProperty("user.dir")+"/AutomatedTestsRunReport/SmokeTestReport.pdf");
 file = new File("user.dir");

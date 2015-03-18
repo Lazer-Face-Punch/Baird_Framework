@@ -3,13 +3,11 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.booj.base.FailTest">
+      <class name="com.booj.base.IfTest">
         <methods>
-          <include name="test_Account_Login_Page_Appear_Correct_Fail"/>
-          <include name="setupBeforeTestMethod"/>
-          <include name="tearDownAfterTestMethod"/>
+          <include name="thtl"/>
         </methods>
-      </class> <!-- com.booj.base.FailTest -->
+      </class> <!-- com.booj.base.IfTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
