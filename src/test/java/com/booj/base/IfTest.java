@@ -23,9 +23,27 @@ public class IfTest {
 		
 		if (file.equals("C:\\Users\\brenden\\workspace\\Maven_Testing\\baird-framework")){
 			System.out.println("Local");
-			
+			URL url = null;	
+			try {
+				url = new URL("http", "file:///", file);
+				System.out.println(url);
+	
+			} catch (MalformedURLException e) {
+				 //TODO Auto-generated catch block
+				e.printStackTrace();
+			}	
 		}else if (file.equals("C:\\Users\\brenden\\.jenkins\\jobs\\PDF test\\workspace")){
 			System.out.println("Jenkins");
+			String replaced = file.replace("C:\\Users\\brenden\\.jenkins\\jobs\\PDF test\\workspace\\", "/job/PDF test/ws/");
+			URL url = null;	
+				try {
+					url = new URL("http", "localhost", 8080, replaced);
+					System.out.println(url);
+				} catch (MalformedURLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			 
 		}else{ 
 			System.out.println("Not Found");
 		}
