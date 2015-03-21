@@ -13,70 +13,70 @@ import org.testng.annotations.Optional;
 
 public abstract class BaseSuper {
 	protected WebDriver driver;
-	/*protected AccountLoginTest objLogin;*/
+
+	/* protected AccountLoginTest objLogin; */
 
 	/* protected String baseUrl = "http://www.bairdwarner.com"; */
 
-	
-	/*@Parameters({"browser"})*/
+	/* @Parameters({"browser"}) */
 	@BeforeMethod
-	/*public void setUpBeforeTestClass()throws Exception{*/
-		
-/*	Driver.Initialize();
-}*/
+	/* public void setUpBeforeTestClass()throws Exception{ */
+	/*
+	 * Driver.Initialize(); }
+	 */
 	public void setUpBeforeTestClass(@Optional String browser, Method method) {
 		System.out.println("Running Test: " + method.getName());
-		
-	if (browser.equalsIgnoreCase("Firefox")){
-		driver = new FirefoxDriver();
-	}
-	else if (browser.equalsIgnoreCase("HtmlUnit")){
-		driver = new HtmlUnitDriver();
-		LogFactory.getFactory().setAttribute("org.apache.commons.logging.Log", "org.apache.commons.logging.impl.NoOpLog");
 
-        java.util.logging.Logger.getLogger("com.gargoylesoftware.htmlunit").setLevel(Level.OFF); 
-        java.util.logging.Logger.getLogger("org.apache.commons.httpclient").setLevel(Level.OFF);
-	
-	}
-	System.out.println("Thread id = " + Thread.currentThread().getId());
+		if (browser.equalsIgnoreCase("Firefox")) {
+			driver = new FirefoxDriver();
+		} else if (browser.equalsIgnoreCase("HtmlUnit")) {
+			driver = new HtmlUnitDriver();
+			LogFactory.getFactory().setAttribute(
+					"org.apache.commons.logging.Log",
+					"org.apache.commons.logging.impl.NoOpLog");
+
+			java.util.logging.Logger.getLogger("com.gargoylesoftware.htmlunit")
+					.setLevel(Level.OFF);
+			java.util.logging.Logger.getLogger("org.apache.commons.httpclient")
+					.setLevel(Level.OFF);
+
+		}
+		System.out.println("Thread id = " + Thread.currentThread().getId());
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.get("http://www.bairdwarner.com");
 	}
-	
-/*	@AfterMethod
-	public void tearDown(ITestResult result) throws Exception {
-		System.out.println("method name:" + result.getMethod().getMethodName());
-		System.out.println("\nBrower close");
-		driver.quit();
-	}*/
-}
 
 	/*
-	 * @BeforeTest public void setUp() throws Exception{ driver = new
-	 * FirefoxDriver(); driver.manage().timeouts().implicitlyWait(10,
-	 * TimeUnit.SECONDS); driver.get(baseUrl);
-	 * 
-	 * }
-	 * 
-	 * @AfterTest public void closebrowser() throws Exception {
+	 * @AfterMethod public void tearDown(ITestResult result) throws Exception {
+	 * System.out.println("method name:" + result.getMethod().getMethodName());
 	 * System.out.println("\nBrower close"); driver.quit(); }
 	 */
+}
 
-	/*
-	 * void setUpBeforeTestMethod(){ driver.get(baseUrl); }
-	 */
+/*
+ * @BeforeTest public void setUp() throws Exception{ driver = new
+ * FirefoxDriver(); driver.manage().timeouts().implicitlyWait(10,
+ * TimeUnit.SECONDS); driver.get(baseUrl);
+ * 
+ * }
+ * 
+ * @AfterTest public void closebrowser() throws Exception {
+ * System.out.println("\nBrower close"); driver.quit(); }
+ */
 
-	/* abstract void tearDownAfterTestMethod(); */
+/*
+ * void setUpBeforeTestMethod(){ driver.get(baseUrl); }
+ */
 
-	/* abstract void tearDownAfterTestClass(); */
+/* abstract void tearDownAfterTestMethod(); */
 
-	/*
-	 * @BeforeTest public void baseSetup() throws Exception {
-	 * 
-	 * DesiredCapabilities caps = DesiredCapabilities.firefox();
-	 * caps.setCapability("version", "33"); caps.setCapability("name", "baird");
-	 * driver = new RemoteWebDriver(new
-	 * URL("http://localhost:4444/wd/hub"),caps); }
-	 */
+/* abstract void tearDownAfterTestClass(); */
 
-	
+/*
+ * @BeforeTest public void baseSetup() throws Exception {
+ * 
+ * DesiredCapabilities caps = DesiredCapabilities.firefox();
+ * caps.setCapability("version", "33"); caps.setCapability("name", "baird");
+ * driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),caps); }
+ */
+

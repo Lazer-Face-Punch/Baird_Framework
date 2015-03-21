@@ -8,10 +8,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class Driver {
-/*WebDriver driver;*/
+	/* WebDriver driver; */
 	public static WebDriver Instance;
-	
-	
+
 	public static WebDriver getInstance() {
 		return Instance;
 	}
@@ -20,14 +19,14 @@ public class Driver {
 		Instance = instance;
 	}
 
-	public static void Initialize() throws Exception{
+	public static void Initialize() throws Exception {
 		Instance = new FirefoxDriver();
-		Instance.manage().window().setPosition(new Point(0,0));
-		Instance.manage().window().setSize(new Dimension(1024,768));
+		Instance.manage().window().setPosition(new Point(0, 0));
+		Instance.manage().window().setSize(new Dimension(1024, 768));
 		Instance.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 	}
-	
-	public static void tearDown() throws Exception{
+
+	public static void tearDown() throws Exception {
 		System.out.println("\nBrowser close");
 		Driver.Instance.quit();
 	}

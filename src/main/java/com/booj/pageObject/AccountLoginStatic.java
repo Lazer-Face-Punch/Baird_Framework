@@ -13,139 +13,137 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.booj.driver.Driver;
 
 public class AccountLoginStatic {
-	/*static WebDriver driver;*/
+	/* static WebDriver driver; */
 	private static By loginButton = By.linkText("Log In");
-	/*By popupBox = By.id("account_login_form");*/
-	private static By email = By.cssSelector("div.fancybox-inner > #account_login_form > #account_login_ajax > fieldset.clearfix > div.form-group > #wua-email");
-	private static By password = By.cssSelector("div.fancybox-inner > #account_login_form > #account_login_ajax > fieldset.clearfix > div.form-group > #wua-pass");
-	private static By login = By.cssSelector("div.fancybox-inner > #account_login_form > #account_login_ajax > fieldset.clearfix > input[name=\"Submit\"]");
-	@FindBy(className="account-user-name")private static WebElement welcomeText;
-	//@FindBy(linkText="Log Out") private static WebElement logout;
+	/* By popupBox = By.id("account_login_form"); */
+	private static By email = By
+			.cssSelector("div.fancybox-inner > #account_login_form > #account_login_ajax > fieldset.clearfix > div.form-group > #wua-email");
+	private static By password = By
+			.cssSelector("div.fancybox-inner > #account_login_form > #account_login_ajax > fieldset.clearfix > div.form-group > #wua-pass");
+	private static By login = By
+			.cssSelector("div.fancybox-inner > #account_login_form > #account_login_ajax > fieldset.clearfix > input[name=\"Submit\"]");
+	@FindBy(className = "account-user-name")
+	private static WebElement welcomeText;
+	// @FindBy(linkText="Log Out") private static WebElement logout;
 	private static By logout = By.linkText("Logout");
-	
-	
-	private static Logger Log = Logger.getLogger(AccountLoginStatic.class.getName());
-	
-	
 
- 
+	private static Logger Log = Logger.getLogger(AccountLoginStatic.class
+			.getName());
 
-	
-public AccountLoginStatic(WebDriver driver){ 
-	/*this.driver = driver;*/
-	PageFactory.initElements(driver, this);
-	driver.get("http://www.bairdwarner.com");
-}
+	public AccountLoginStatic(WebDriver driver) {
+		/* this.driver = driver; */
+		PageFactory.initElements(driver, this);
+		driver.get("http://www.bairdwarner.com");
+	}
 
-/*public void setUpBeforeTestClass(){
-	 
-	  driver = new FirefoxDriver();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		driver.get("http://www.bairdwarner.com/");
-		
-}*/
-/*public static void setUp() {
-	Driver.Instance.get("http://www.bairdwarner.com");
-}*/	
+	/*
+	 * public void setUpBeforeTestClass(){
+	 * 
+	 * driver = new FirefoxDriver();
+	 * driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	 * driver.get("http://www.bairdwarner.com/");
+	 * 
+	 * }
+	 */
+	/*
+	 * public static void setUp() {
+	 * Driver.Instance.get("http://www.bairdwarner.com"); }
+	 */
 
-protected static AccountLoginStatic Login;
-	
+	protected static AccountLoginStatic Login;
 
+	protected static AccountLoginStatic getLogin() {
+		return Login;
+	}
 
-protected static AccountLoginStatic getLogin() {
-	return Login;
-}
+	protected static void setLogin(AccountLoginStatic login) {
+		Login = login;
+	}
 
+	// Initializes Page
+	public static void loginInitialize() {
+		Login = new AccountLoginStatic(Driver.Instance);
+	}
 
-protected static void setLogin(AccountLoginStatic login) {
-	Login = login;
-}
+	// Open Login page popup
+	public static void clickLoginPopup() {
+		Driver.Instance.findElement(loginButton).click();
+	}
 
-//Initializes Page
-public static void loginInitialize(){
-	Login = new AccountLoginStatic(Driver.Instance);
-}
+	// Set user name into Text Box
+	public static void setUserName(String strUserName) {
+		Driver.Instance.findElement(email).sendKeys(strUserName);
+	}
 
-//Open Login page popup
-public static void clickLoginPopup(){
-	Driver.Instance.findElement(loginButton).click();
-}
+	// Set Password
+	public static void setPassword(String strPassword) {
+		Driver.Instance.findElement(password).sendKeys(strPassword);
+	}
 
+	// Click Login Button
+	public static void clickLogin() {
+		Driver.Instance.findElement(login).click();
+	}
 
-//Set user name into Text Box
-public static void setUserName(String strUserName){
-	Driver.Instance.findElement(email).sendKeys(strUserName);
-}
+	// Verify logged in Welcome/Name
+	public static String getLoginWelcome() {
+		new WebDriverWait(Driver.Instance, 15).until(ExpectedConditions
+				.visibilityOf(welcomeText));
+		return welcomeText.getText();
+	}
 
-//Set Password
-public static void setPassword(String strPassword){
-	Driver.Instance.findElement(password).sendKeys(strPassword);
-}
-//Click Login Button
-public static void clickLogin(){
-	Driver.Instance.findElement(login).click();
-}
+	// Logout
+	public static void clickLogout() {
+		Driver.Instance.findElement(logout).click();
+	}
 
-//Verify logged in Welcome/Name
-public static String getLoginWelcome(){
-	new WebDriverWait(Driver.Instance, 15)
-	.until(ExpectedConditions.visibilityOf(welcomeText));
-	return welcomeText.getText();
-}
+	// Verify logged out
+	public static void verifyLoggedOut() {
+		new WebDriverWait(Driver.Instance, 15).until(ExpectedConditions
+				.visibilityOfElementLocated(loginButton));
+	}
 
-//Logout
-public static void clickLogout(){
-	Driver.Instance.findElement(logout).click();
-}
+	/**
+	 * This POM method will be exposed in test case to login in the application
+	 * 
+	 * @param strUserName
+	 * @param strPassword
+	 */
+	public static void loginToBairdAccount(String strUserName,
+			String strPassword) {
+		DOMConfigurator.configure("log4j.xml");
 
-//Verify logged out
-public static void verifyLoggedOut(){
-	new WebDriverWait(Driver.Instance, 15)
-	.until(ExpectedConditions.visibilityOfElementLocated(loginButton));
-}
+		// Click account menu item
+		AccountLoginStatic.clickLoginPopup();
+		Log.info("Click account menu item");
 
+		// Target Popup
+		/* this.targetPopup(); */
 
+		// Fill user name
+		AccountLoginStatic.setUserName(strUserName);
+		Log.info("Fill user name");
+		// Fill password
+		AccountLoginStatic.setPassword(strPassword);
+		Log.info("Fill password");
+		// Click Login Button
+		AccountLoginStatic.clickLogin();
+		Log.info("Click login button");
 
-/**
- *  This POM method will be exposed in test case to login in the application
- * @param strUserName
- * @param strPassword
- */
-public static void loginToBairdAccount(String strUserName, String strPassword){
-	DOMConfigurator.configure("log4j.xml");
-	
-	//Click account menu item
-	AccountLoginStatic.clickLoginPopup();
-	Log.info("Click account menu item");
-	
-	//Target Popup
-	/*this.targetPopup();*/
-	
-	//Fill user name
-	AccountLoginStatic.setUserName(strUserName);
-	Log.info("Fill user name");
-	//Fill password
-	AccountLoginStatic.setPassword(strPassword);
-	Log.info("Fill password");
-	//Click Login Button
-	AccountLoginStatic.clickLogin();
-	Log.info("Click login button");
-	
-	//Verify Welcome Text
-	AccountLoginStatic.getLoginWelcome();
-	Log.info("Verify Welcome Text");
-	
-	
-}
+		// Verify Welcome Text
+		AccountLoginStatic.getLoginWelcome();
+		Log.info("Verify Welcome Text");
 
-public static void logoutOfBairdAccount(){
-	
-	//Logout
+	}
+
+	public static void logoutOfBairdAccount() {
+
+		// Logout
 		AccountLoginStatic.clickLogout();
 		Log.info("Click Logout");
-		
-		//Verify Logout
+
+		// Verify Logout
 		AccountLoginStatic.verifyLoggedOut();
 		Log.info("Verified Log Out");
-}
+	}
 }

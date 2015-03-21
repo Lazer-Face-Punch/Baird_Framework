@@ -23,9 +23,9 @@ public class BaseSub {
 		driver.get("http://www.bairdwarner.com/");
 
 	}
-	
+
 	@AfterMethod
-	public void tearDown(){
+	public void tearDown() {
 		driver.close();
 		System.out.println("Browser Close");
 	}

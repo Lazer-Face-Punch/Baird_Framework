@@ -17,116 +17,116 @@ import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 
-public class Email  {
+public class Email {
 
+	public static void EmailPDFAfterSuite() throws InterruptedException {
+		// Thread.sleep(4000);
+		sendPDFReportByGMail("brenden@activewebsite.com", "$am6reRhH$",
+				"brenden@activewebsite.com", "PDF Report", "");
 
-	public static void EmailPDFAfterSuite() throws InterruptedException{
-		Thread.sleep(4000);
-        sendPDFReportByGMail("brenden@activewebsite.com", "$am6reRhH$", "brenden@activewebsite.com", "PDF Report", "");
+	}
 
-        }
+	/**
+	 * 
+	 * Send email using java
+	 * 
+	 * @param from
+	 * 
+	 * @param pass
+	 * 
+	 * @param to
+	 * 
+	 * @param subject
+	 * 
+	 * @param body
+	 */
 
-    
+	private static void sendPDFReportByGMail(String from, String pass,
+			String to, String subject, String body) {
 
-    /**
+		Properties props = System.getProperties();
 
-     * Send email using java
+		String host = "smtp.gmail.com";
 
-     * @param from
+		props.put("mail.smtp.starttls.enable", "true");
 
-     * @param pass
+		props.put("mail.smtp.host", host);
 
-     * @param to
+		props.put("mail.smtp.user", from);
 
-     * @param subject
+		props.put("mail.smtp.password", pass);
 
-     * @param body
+		props.put("mail.smtp.port", "587");
 
-     */
+		props.put("mail.smtp.auth", "true");
 
-    private static void sendPDFReportByGMail(String from, String pass, String to, String subject, String body) {
-    	
-Properties props = System.getProperties();
+		Session session = Session.getDefaultInstance(props);
 
-String host = "smtp.gmail.com";
+		MimeMessage message = new MimeMessage(session);
 
-props.put("mail.smtp.starttls.enable", "true");
+		try {
 
-props.put("mail.smtp.host", host);
+			// Set from address
 
-props.put("mail.smtp.user", from);
+			message.setFrom(new InternetAddress(from));
 
-props.put("mail.smtp.password", pass);
+			message.addRecipient(Message.RecipientType.TO, new InternetAddress(
+					to));
 
-props.put("mail.smtp.port", "587");
+			// Set subject
 
-props.put("mail.smtp.auth", "true");
+			message.setSubject(subject);
 
-Session session = Session.getDefaultInstance(props);
+			message.setText(body);
 
-MimeMessage message = new MimeMessage(session);
+			BodyPart objMessageBodyPart = new MimeBodyPart();
 
-try {
+			objMessageBodyPart.setText("Please Find The Attached Report File!");
 
-    //Set from address
+			Multipart multipart = new MimeMultipart();
 
-message.setFrom(new InternetAddress(from));
+			multipart.addBodyPart(objMessageBodyPart);
 
-message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
+			objMessageBodyPart = new MimeBodyPart();
 
-//Set subject
+			// Set path to the pdf report file
 
-message.setSubject(subject);
+			String filename = System.getProperty("user.dir")
+					+ "/AutomatedTestsRunReport/SmokeTestReport.pdf";
 
-message.setText(body);
+			// Create data source to attach the file in mail
 
-BodyPart objMessageBodyPart = new MimeBodyPart();
+			DataSource source = new FileDataSource(filename);
 
-objMessageBodyPart.setText("Please Find The Attached Report File!");
+			objMessageBodyPart.setDataHandler(new DataHandler(source));
 
-Multipart multipart = new MimeMultipart();
+			objMessageBodyPart.setFileName(filename);
 
-multipart.addBodyPart(objMessageBodyPart);
+			multipart.addBodyPart(objMessageBodyPart);
 
-objMessageBodyPart = new MimeBodyPart();
+			message.setContent(multipart);
 
-//Set path to the pdf report file
+			Transport transport = session.getTransport("smtp");
 
-String filename = System.getProperty("user.dir")+"/AutomatedTestsRunReport/SmokeTestReport.pdf";
+			transport.connect(host, from, pass);
 
-//Create data source to attach the file in mail
+			transport.sendMessage(message, message.getAllRecipients());
 
-DataSource source = new FileDataSource(filename);
+			transport.close();
 
-objMessageBodyPart.setDataHandler(new DataHandler(source));
+		}
 
-objMessageBodyPart.setFileName(filename);
+		catch (AddressException ae) {
 
-multipart.addBodyPart(objMessageBodyPart);
+			ae.printStackTrace();
 
-message.setContent(multipart);
+		}
 
-Transport transport = session.getTransport("smtp");
+		catch (MessagingException me) {
 
-transport.connect(host, from, pass);
+			me.printStackTrace();
 
-transport.sendMessage(message, message.getAllRecipients());
+		}
 
-transport.close();
-
-}
-
-catch (AddressException ae) {
-
-ae.printStackTrace();
-
-}
-
-catch (MessagingException me) {
-
-me.printStackTrace();
-
-}
-
-}
+	}
 }
