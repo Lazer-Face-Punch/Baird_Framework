@@ -9,10 +9,10 @@
 <parameter name="browser" value="FIREFOX"></parameter>
 <parameter name="version" value="23.0"></parameter>
 <parameter name="internal" value="true"></parameter> -->
-<test name="Fail "> 
+<test name="Fail"> 
 <!-- <parameter name="browser" value="Firefox"/> -->
     <classes>
-       <class name="com.booj.base.IfTest" >
+       <class name="com.booj.base.FactoryTest" >
        </class>
     </classes>
 </test>

@@ -44,10 +44,20 @@
 
   <dependencies>
   <dependency>
+    <groupId>ru.stqa.selenium</groupId>
+    <artifactId>webdriver-factory</artifactId>
+    <version>1.1.43</version>
+</dependency>
+  <dependency>
  <groupId>com.dropbox.core</groupId>
  <artifactId>dropbox-core-sdk</artifactId>
  <version>1.7.7</version>
 </dependency>
+<dependency>
+      <groupId>org.finra.jtaf</groupId>
+      <artifactId>jtaf-extwebdriver</artifactId>
+      <version>1.4</version>
+   </dependency>
       <dependency>
     <groupId>com.saucelabs</groupId>
     <artifactId>sauce_testng</artifactId>

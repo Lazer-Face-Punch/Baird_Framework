@@ -1,38 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite thread-count="2" verbose="2" name="Failed suite [smoke-test-suite]" parallel="methods">
-  <test name="Fail (failed)" parallel="methods">
+  <test name="Fail(failed)" parallel="methods">
     <classes>
-      <class name="com.booj.base.FailTest">
+      <class name="com.booj.base.FactoryTest">
         <methods>
-          <include name="tearDownAfterTestMethod"/>
-          <include name="test_Account_Login_Page_Appear_Correct_Fail"/>
           <include name="setupBeforeTestMethod"/>
+          <include name="test_Login_Button_Present_Pass"/>
+          <include name="test_Login_Button_Present_Fail"/>
         </methods>
-      </class> <!-- com.booj.base.FailTest -->
-      <class name="com.booj.base.PassTest">
-        <methods>
-          <include name="tearDownAfterTestMethod"/>
-          <include name="setupBeforeTestMethod"/>
-        </methods>
-      </class> <!-- com.booj.base.PassTest -->
+      </class> <!-- com.booj.base.FactoryTest -->
     </classes>
-  </test> <!-- Fail (failed) -->
-  <test name="Pass(failed)" parallel="methods">
-    <classes>
-      <class name="com.booj.base.FailTest">
-        <methods>
-          <include name="tearDownAfterTestMethod"/>
-          <include name="setupBeforeTestMethod"/>
-        </methods>
-      </class> <!-- com.booj.base.FailTest -->
-      <class name="com.booj.base.PassTest">
-        <methods>
-          <include name="tearDownAfterTestMethod"/>
-          <include name="test_Account_Login_Page_Appear_Correct_Pass"/>
-          <include name="setupBeforeTestMethod"/>
-        </methods>
-      </class> <!-- com.booj.base.PassTest -->
-    </classes>
-  </test> <!-- Pass(failed) -->
+  </test> <!-- Fail(failed) -->
 </suite> <!-- Failed suite [smoke-test-suite] -->
