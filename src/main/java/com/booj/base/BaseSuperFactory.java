@@ -12,7 +12,7 @@ import com.booj.utilities.ScreenShot;
 public abstract class BaseSuperFactory extends ScreenShot {
 	
 	
-	ExtWebDriver Instance = Initialize();
+	//ExtWebDriver Instance = Initialize();
 	
 
 
@@ -24,12 +24,12 @@ public abstract class BaseSuperFactory extends ScreenShot {
 		
 		
 		DOMConfigurator.configure("log4j.xml");
-		Driver2.Initialize();
+		//Driver2.getInstance().getDriver();
 		//driver = WebDriverFactory.getDriver(DesiredCapabilities.firefox());
-		Driver2.Initialize().get("http://bairdwarner.com");
+		Driver2.getInstance().getDriver().get("http://bairdwarner.com");
 		Log.info("Browser Started");
 		
-		String sessionId = Driver2.Initialize().getSessionId();
+		String sessionId = Driver2.getInstance().getDriver().getSessionId();
 		 System.out.println("SessionId" + sessionId);
 		System.out.println("Thread id = " + Thread.currentThread().getId());
 	}
@@ -37,7 +37,7 @@ public abstract class BaseSuperFactory extends ScreenShot {
 	@AfterMethod
 	public void tearDownAfterTestMethod() throws Exception {
 		DOMConfigurator.configure("log4j.xml");
-		Driver2.tearDown();
+		Driver2.getInstance().tearDown();
 		//WebDriverFactory.dismissAll();
 		Log.info("Browser Closed");
 		// Email.EmailPDFAfterSuite();

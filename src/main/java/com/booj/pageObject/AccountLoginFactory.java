@@ -11,12 +11,12 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.booj.driver.Driver2;
-//import com.booj.Driver2.Initialize().Driver2.Initialize();
+//import com.booj.Driver2.getInstance().getDriver().Driver2.getInstance().getDriver();
 
 public class AccountLoginFactory  {
 	//private static ExtWebDriver Instance = null;
 	
-	 //static WebDriver2.Initialize() Driver2.Initialize();
+	 //static WebDriver2.getInstance().getDriver() Driver2.getInstance().getDriver();
 	public static By loginButton = By.linkText("Log In");
 	/* By popupBox = By.id("account_login_form"); */
 	private static By email = By
@@ -32,27 +32,28 @@ public class AccountLoginFactory  {
 
 	private static Logger Log = Logger.getLogger(AccountLoginFactory.class
 			.getName());
+	
 
 	public AccountLoginFactory() {
-		 //BaseSuperFactory.Driver2.Initialize() = Driver2.Initialize(); 
-		 PageFactory.initElements(Driver2.Initialize(), this);
+		 //BaseSuperFactory.Driver2.getInstance().getDriver() = Driver2.getInstance().getDriver(); 
+		 PageFactory.initElements(Driver2.getInstance().getDriver(), this);
 		 //System.out.println("Page Object Thread id = " + Thread.currentThread().getId());
-		//Driver2.Initialize().get("http://www.bairdwarner.com");
+		//Driver2.getInstance().getDriver().get("http://www.bairdwarner.com");
 		
 	}
 
 	/*
 	 * public void setUpBeforeTestClass(){
 	 * 
-	 * Driver2.Initialize() = new FirefoxDriver2.Initialize()();
-	 * Driver2.Initialize().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-	 * Driver2.Initialize().get("http://www.bairdwarner.com/");
+	 * Driver2.getInstance().getDriver() = new FirefoxDriver2.getInstance().getDriver()();
+	 * Driver2.getInstance().getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	 * Driver2.getInstance().getDriver().get("http://www.bairdwarner.com/");
 	 * 
 	 * }
 	 */
 	/*
 	 * public static void setUp() {
-	 * Driver2.Initialize()..get("http://www.bairdwarner.com"); }
+	 * Driver2.getInstance().getDriver()..get("http://www.bairdwarner.com"); }
 	 */
 
 	protected static AccountLoginFactory Obj;
@@ -72,44 +73,44 @@ public class AccountLoginFactory  {
 
 	// Open Login page popup
 	public static void clickLoginPopup() {
-		Driver2.Initialize().findElement(loginButton).click();
+		Driver2.getInstance().getDriver().findElement(loginButton).click();
 	}
 
 	// Set user name into Text Box
 	public static void setUserName(String strUserName) {
-		Driver2.Initialize().findElement(email).sendKeys(strUserName);
+		Driver2.getInstance().getDriver().findElement(email).sendKeys(strUserName);
 	}
 
 	// Set Password
 	public static void setPassword(String strPassword) {
-		Driver2.Initialize().findElement(password).sendKeys(strPassword);
+		Driver2.getInstance().getDriver().findElement(password).sendKeys(strPassword);
 	}
 
 	// Click Login Button
 	public static void clickLogin() {
-		Driver2.Initialize().findElement(login).click();
+		Driver2.getInstance().getDriver().findElement(login).click();
 	}
 
 	// Verify logged in Welcome/Name
 	public static String getLoginWelcome() {
-		new WebDriverWait(Driver2.Initialize(), 15).until(ExpectedConditions
+		new WebDriverWait(Driver2.getInstance().getDriver(), 15).until(ExpectedConditions
 				.visibilityOf(welcomeText));
 		return welcomeText.getText();
 	}
 
 	// Logout
 	public static void clickLogout() {
-		Driver2.Initialize().findElement(logout).click();
+		Driver2.getInstance().getDriver().findElement(logout).click();
 	}
 
 	// Verify logged out
 	public static void verifyLoggedOut() {
-		new WebDriverWait(Driver2.Initialize(), 15).until(ExpectedConditions
+		new WebDriverWait(Driver2.getInstance().getDriver(), 15).until(ExpectedConditions
 				.visibilityOfElementLocated(loginButton));
 	}
 	
 	public static boolean verifyLoginButton(){
-		Driver2.Initialize().findElement(loginButton).isDisplayed();
+		Driver2.getInstance().getDriver().findElement(loginButton).isDisplayed();
 		return true;
 	}
 

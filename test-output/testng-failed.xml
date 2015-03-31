@@ -5,7 +5,6 @@
     <classes>
       <class name="com.booj.base.FactoryTest">
         <methods>
-          <include name="tearDownAfterTestMethod"/>
           <include name="setupBeforeTestMethod"/>
           <include name="test_Login_Button_Present_Pass"/>
         </methods>

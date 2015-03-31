@@ -3041,3 +3041,6 @@ net.sourceforge.htmlunit.corejs.javascript.EcmaError: TypeError: Cannot set prop
 2015-03-27 20:00:36,434 WARN  [impl] No RGB property for highlight was provided. Colors set to default. 
 2015-03-27 20:00:40,951 WARN  [impl] No RGB property for highlight was provided. Colors set to default. 
 2015-03-27 20:00:41,323 INFO  [BaseSuperFactory] Browser Closed 
+2015-03-30 18:14:38,141 WARN  [impl] No RGB property for highlight was provided. Colors set to default. 
+2015-03-30 18:14:39,485 WARN  [impl] No RGB property for highlight was provided. Colors set to default. 
+2015-03-30 18:14:39,500 WARN  [impl] No RGB property for highlight was provided. Colors set to default. 
