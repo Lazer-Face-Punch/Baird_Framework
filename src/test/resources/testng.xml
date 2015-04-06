@@ -12,8 +12,7 @@
 <test name="Fail"> 
 <!-- <parameter name="browser" value="Firefox"/> -->
     <classes>
-       <class name="com.booj.base.FactoryTest" >
-       </class>
+       <class name="com.booj.driver.Driver4" />
     </classes>
 </test>
 <!-- -->

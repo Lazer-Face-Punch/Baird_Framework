@@ -3044,3 +3044,23 @@ net.sourceforge.htmlunit.corejs.javascript.EcmaError: TypeError: Cannot set prop
 2015-03-30 18:14:38,141 WARN  [impl] No RGB property for highlight was provided. Colors set to default. 
 2015-03-30 18:14:39,485 WARN  [impl] No RGB property for highlight was provided. Colors set to default. 
 2015-03-30 18:14:39,500 WARN  [impl] No RGB property for highlight was provided. Colors set to default. 
+2015-04-01 15:26:44,099 WARN  [impl] No RGB property for highlight was provided. Colors set to default. 
+2015-04-01 15:26:45,170 WARN  [impl] No RGB property for highlight was provided. Colors set to default. 
+2015-04-01 15:26:45,285 WARN  [impl] No RGB property for highlight was provided. Colors set to default. 
+2015-04-01 15:27:00,800 WARN  [impl] No RGB property for highlight was provided. Colors set to default. 
+2015-04-01 15:27:05,289 INFO  [BaseSuperFactory] Browser Started 
+2015-04-01 15:27:11,841 INFO  [BaseSuperFactory] Browser Closed 
+2015-04-01 15:27:55,441 WARN  [impl] No RGB property for highlight was provided. Colors set to default. 
+2015-04-01 15:27:55,623 WARN  [impl] No RGB property for highlight was provided. Colors set to default. 
+2015-04-01 15:27:55,631 WARN  [impl] No RGB property for highlight was provided. Colors set to default. 
+2015-04-01 15:27:58,867 WARN  [impl] No RGB property for highlight was provided. Colors set to default. 
+2015-04-01 15:28:02,222 INFO  [BaseSuperFactory] Browser Started 
+2015-04-01 15:28:03,628 INFO  [BaseSuperFactory] Browser Closed 
+2015-04-01 15:31:54,904 WARN  [impl] No RGB property for highlight was provided. Colors set to default. 
+2015-04-01 15:31:55,027 WARN  [impl] No RGB property for highlight was provided. Colors set to default. 
+2015-04-01 15:31:55,034 WARN  [impl] No RGB property for highlight was provided. Colors set to default. 
+2015-04-01 15:31:58,686 WARN  [impl] No RGB property for highlight was provided. Colors set to default. 
+2015-04-01 15:32:01,918 INFO  [BaseSuperFactory] Browser Started 
+2015-04-01 15:32:06,978 INFO  [BaseSuperFactory] Browser Started 
+2015-04-01 15:32:07,660 INFO  [BaseSuperFactory] Browser Closed 
+2015-04-01 15:32:07,744 INFO  [BaseSuperFactory] Browser Closed 

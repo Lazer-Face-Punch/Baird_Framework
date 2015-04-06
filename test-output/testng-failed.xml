@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Default suite]">
-  <test name="Default test(failed)">
+<suite thread-count="2" verbose="2" name="Failed suite [smoke-test-suite]" parallel="methods">
+  <test name="Fail(failed)" parallel="methods">
     <classes>
-      <class name="com.booj.base.FactoryTest">
+      <class name="com.booj.driver.Driver4">
         <methods>
-          <include name="setupBeforeTestMethod"/>
-          <include name="test_Login_Button_Present_Pass"/>
+          <include name="Geek"/>
+          <include name="Baird"/>
+          <include name="setup"/>
+          <include name="teardown"/>
         </methods>
-      </class> <!-- com.booj.base.FactoryTest -->
+      </class> <!-- com.booj.driver.Driver4 -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- Fail(failed) -->
+</suite> <!-- Failed suite [smoke-test-suite] -->

@@ -3,10 +3,12 @@ package com.booj.base;
 import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
 import org.finra.jtaf.ewd.ExtWebDriver;
+import org.finra.jtaf.ewd.session.SessionManager;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 import com.booj.driver.Driver2;
+import com.booj.driver.Driver3;
 import com.booj.utilities.ScreenShot;
 
 public abstract class BaseSuperFactory extends ScreenShot {
@@ -22,14 +24,15 @@ public abstract class BaseSuperFactory extends ScreenShot {
 	@BeforeMethod
 	public void setupBeforeTestMethod() throws Exception {
 		
+		//ExtWebDriver ewd = SessionManager.getInstance().setSessionFactory(new Driver3()).getNewSession();
 		
 		DOMConfigurator.configure("log4j.xml");
-		//Driver2.getInstance().getDriver();
+		//Driver2.getInstance();
 		//driver = WebDriverFactory.getDriver(DesiredCapabilities.firefox());
-		Driver2.getInstance().getDriver().get("http://bairdwarner.com");
+		Driver3.newDriver().get("http://bairdwarner.com");
 		Log.info("Browser Started");
 		
-		String sessionId = Driver2.getInstance().getDriver().getSessionId();
+		String sessionId = Driver2.getInstance().getSessionId();
 		 System.out.println("SessionId" + sessionId);
 		System.out.println("Thread id = " + Thread.currentThread().getId());
 	}
@@ -37,7 +40,7 @@ public abstract class BaseSuperFactory extends ScreenShot {
 	@AfterMethod
 	public void tearDownAfterTestMethod() throws Exception {
 		DOMConfigurator.configure("log4j.xml");
-		Driver2.getInstance().tearDown();
+		Driver2.tearDown();
 		//WebDriverFactory.dismissAll();
 		Log.info("Browser Closed");
 		// Email.EmailPDFAfterSuite();

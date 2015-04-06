@@ -56,7 +56,7 @@ public class FactoryTest  extends BaseSuperFactory {
 		
 	}
 	
-	@Test(enabled = false)
+	@Test(enabled = true)
 	public void test_Login_Button_Present_Fail() throws InterruptedException{
 		
 		AccountLoginFactory.loginInitialize();
