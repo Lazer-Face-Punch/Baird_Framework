@@ -1,37 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="smoke-test-suite" duration-ms="21196" started-at="2015-04-04T23:38:21Z" finished-at="2015-04-04T23:38:42Z">
+  <suite name="Default suite" duration-ms="6052" started-at="2015-04-07T17:52:48Z" finished-at="2015-04-07T17:52:54Z">
     <groups>
     </groups>
-    <test name="Fail" duration-ms="21196" started-at="2015-04-04T23:38:21Z" finished-at="2015-04-04T23:38:42Z">
-      <class name="com.booj.driver.Driver4">
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.booj.driver.Driver4@17c68925]" name="setup" is-config="true" duration-ms="6068" started-at="2015-04-04T17:38:21Z" finished-at="2015-04-04T17:38:27Z">
+    <test name="Default test" duration-ms="6052" started-at="2015-04-07T17:52:48Z" finished-at="2015-04-07T17:52:54Z">
+      <class name="com.booj.base.V2">
+        <test-method status="PASS" signature="scenario()[pri:0, instance:com.booj.base.V2@5b247367]" name="scenario" duration-ms="6042" started-at="2015-04-07T11:52:48Z" finished-at="2015-04-07T11:52:54Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.booj.driver.Driver4@17c68925]" name="setup" is-config="true" duration-ms="3544" started-at="2015-04-04T17:38:21Z" finished-at="2015-04-04T17:38:24Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method status="PASS" signature="Baird()[pri:0, instance:com.booj.driver.Driver4@17c68925]" name="Baird" duration-ms="9179" started-at="2015-04-04T17:38:24Z" finished-at="2015-04-04T17:38:34Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Baird -->
-        <test-method status="PASS" signature="Geek()[pri:0, instance:com.booj.driver.Driver4@17c68925]" name="Geek" duration-ms="9649" started-at="2015-04-04T17:38:27Z" finished-at="2015-04-04T17:38:37Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Geek -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:com.booj.driver.Driver4@17c68925]" name="teardown" is-config="true" duration-ms="4969" started-at="2015-04-04T17:38:34Z" finished-at="2015-04-04T17:38:39Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:com.booj.driver.Driver4@17c68925]" name="teardown" is-config="true" duration-ms="5465" started-at="2015-04-04T17:38:37Z" finished-at="2015-04-04T17:38:42Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-      </class> <!-- com.booj.driver.Driver4 -->
-    </test> <!-- Fail -->
-  </suite> <!-- smoke-test-suite -->
+        </test-method> <!-- scenario -->
+      </class> <!-- com.booj.base.V2 -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
